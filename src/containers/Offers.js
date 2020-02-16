@@ -34,16 +34,18 @@ const Offers = () => {
         <div>
           <ul>
             {data.map((element, index) => {
+              if (element.pictures.length === 0) {
+                return null;
+              }
               console.log(element);
               return (
                 <Link to={"/offer/" + element._id} key={index}>
                   <li key={element._id}>
-                    <span>{element.title}</span>
-                    <span>{element.description}</span>
-                    <span>{element.price}</span>
-                    <img alt="pictures" src={element.pictures[0]} />
-                    <img alt="pictures" src={element.pictures[1]} />
-                    <img alt="pictures" src={element.pictures[2]} />
+                    <div className="offer-title">{element.title}</div>
+                    <div className="offer-price">{element.price}</div>
+                    <div>
+                      <img alt="pictures" src={element.pictures[0]} />
+                    </div>
                   </li>
                 </Link>
               );
