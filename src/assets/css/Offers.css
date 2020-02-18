@@ -1,0 +1,6 @@
+.all-offers {
+  display: flex;
+  width: 1000px;
+  height: 180px;
+  border-radius: 5px;
+}

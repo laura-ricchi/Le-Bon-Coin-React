@@ -2,10 +2,12 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import Cookies from "js-cookie";
 import logo from "../assets/img/logo.svg";
+import "../App.css";
 import "../assets/css/Header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faPlusSquare } from "@fortawesome/free-solid-svg-icons";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 const Header = ({ user, setUser }) => {
   const history = useHistory();
@@ -13,20 +15,34 @@ const Header = ({ user, setUser }) => {
   return (
     <header>
       <img src={logo} className="logo" alt="logo" />
-      <div className="icon-plus">
-        <FontAwesomeIcon icone={faPlusSquare} />
-        <button className="create-offer">Déposer une annonce</button>
-      </div>
-      <form>
+
+      <Link to="/offer/publish" style={{ textDecoration: "none" }}>
+        <button className="create-offer">
+          <div className="icon-plus">
+            <FontAwesomeIcon icon={faPlusSquare} />
+          </div>
+          <span>Déposer une annonce</span>
+        </button>
+      </Link>
+      <div className="search">
         <div className="icon-search">
           <FontAwesomeIcon icon={faSearch} />
-          <input type="text" placeholder="Rechercher"></input>
         </div>
-      </form>
+        <span>Rechercher</span>
+      </div>
+
       {user === null ? (
-        <Link to="/log_in">Se connecter</Link>
+        <Link to="/log_in" style={{ textDecoration: "none" }}>
+          <div className="login">
+            <div className="icon-user">
+              <FontAwesomeIcon icon={faUser} />
+            </div>
+            <span>Se connecter</span>
+          </div>
+        </Link>
       ) : (
-        <button
+        <div
+          className="deconnect"
           onClick={() => {
             // Déconnexion
             // Suppression du cookie userToken
@@ -37,8 +53,11 @@ const Header = ({ user, setUser }) => {
             history.push("/");
           }}
         >
-          Se déconnecter
-        </button>
+          <div className="icon-user">
+            <FontAwesomeIcon icon={faUser} />
+          </div>
+          <span>Se déconnecter</span>
+        </div>
       )}
     </header>
   );

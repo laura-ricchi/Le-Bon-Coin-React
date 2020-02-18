@@ -5,6 +5,7 @@ import Offer from "./containers/Offer";
 import Offers from "./containers/Offers";
 import SignUp from "./containers/SignUp";
 import LogIn from "./containers/LogIn";
+import Publish from "./containers/Publish";
 import Header from "./components/Header";
 import Cookies from "js-cookie";
 
@@ -24,6 +25,9 @@ function App() {
     <Router>
       <Header user={user} setUser={setUser} />
       <Switch>
+        <Route path="/offer/publish">
+          <Publish setUser={setUser} />
+        </Route>
         <Route path="/log_in">
           <LogIn setUser={setUser} />
         </Route>

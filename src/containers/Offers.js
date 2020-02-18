@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import "../assets/css/Offers.css";
 
 //offers = page d'accueil
 
@@ -31,7 +32,7 @@ const Offers = () => {
       {isLoading === true ? (
         <p>En cours de chargement...</p>
       ) : (
-        <div>
+        <div className="all-offers">
           <ul>
             {data.map((element, index) => {
               if (element.pictures.length === 0) {

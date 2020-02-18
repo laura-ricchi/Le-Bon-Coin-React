@@ -1,7 +1,7 @@
 header {
   display: flex;
   align-items: flex-start;
-  height: 80px;
+  height: 60px;
   width: 1440px;
   background-color: #ffffff;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
@@ -12,16 +12,59 @@ header {
   top: 10%;
 }
 .create-offer {
+  display: flex;
   background-color: #f56b2a;
   border-radius: 5px;
-  height: 39px;
-  width: 204px;
-  margin: 11px 0 10px 0px;
   color: #ffffff;
   font-size: 16px;
   line-height: 19px;
+  width: 204px;
+  height: 39px;
+  margin: 11px 31px 10px 44px;
 }
-.icon-search {
-  height: 15px;
-  width: 15px;
+.create-offer > .icon-plus {
+  align-items: flex-end;
+  font-size: 17px;
+}
+
+.create-offer > span {
+  padding-left: 12px;
+}
+.search {
+  display: flex;
+  border-bottom: #f56b2a;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  margin: 20px 298px 19px 15px;
+  width: 91px;
+}
+.search > .icon-search {
+  font-size: 25px;
+  margin-right: 20px;
+}
+.search > p {
+  font-size: 18px;
+  align-items: center;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 9px 0px 17px 0px;
+}
+.login > .icon-user {
+  color: #000000;
+}
+.login > .icon-plus > span {
+  border: none;
+  text-decoration: none;
+}
+.deconnect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 9px 0px 17px 0px;
 }
