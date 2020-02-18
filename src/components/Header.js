@@ -16,14 +16,12 @@ const Header = ({ user, setUser }) => {
     <header>
       <img src={logo} className="logo" alt="logo" />
 
-      <Link to="/offer/publish" style={{ textDecoration: "none" }}>
-        <button className="create-offer">
-          <div className="icon-plus">
-            <FontAwesomeIcon icon={faPlusSquare} />
-          </div>
-          <span>Déposer une annonce</span>
-        </button>
-      </Link>
+      <button className="create-offer">
+        <div className="icon-plus">
+          <FontAwesomeIcon icon={faPlusSquare} />
+        </div>
+        <span>Déposer une annonce</span>
+      </button>
       <div className="search">
         <div className="icon-search">
           <FontAwesomeIcon icon={faSearch} />

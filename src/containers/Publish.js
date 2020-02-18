@@ -18,6 +18,7 @@ const Publish = ({ setUser }) => {
     return (
       <div className="offer-publish">
         <h3>Déposer une annonce</h3>
+        <hr></hr>
 
         <form
           onSubmit={async event => {
@@ -31,7 +32,7 @@ const Publish = ({ setUser }) => {
 
             try {
               const response = await axios.post(
-                "https://leboncoin-api.herokuapp.com/api/offer/publish",
+                "http://localhost:3001/upload",
                 formData,
                 {
                   headers: {
@@ -51,14 +52,14 @@ const Publish = ({ setUser }) => {
               } else {
                 console.log("erreur");
               }
-              // modal;
             } catch (error) {
               console.log("error.message = ", error);
             }
           }}
         >
-          <p>Titre de l'annonce *</p>
+          <p style={{ marginTop: "33px" }}>Titre de l'annonce *</p>
           <input
+            className="title-offer"
             type="text"
             value={title}
             onChange={event => {
@@ -66,8 +67,9 @@ const Publish = ({ setUser }) => {
             }}
           />
 
-          <p>Texte de l'annonce *</p>
+          <p style={{ marginTop: "19px" }}>Texte de l'annonce *</p>
           <input
+            className="text-offer"
             type="text"
             value={text}
             onChange={event => {
@@ -75,23 +77,31 @@ const Publish = ({ setUser }) => {
             }}
           />
 
-          <p>Prix *</p>
+          <p style={{ marginTop: "23px" }}>Prix *</p>
           <input
+            className="price-offer"
             type="number"
             value={price}
             onChange={event => {
               setPrice(event.target.value);
             }}
           />
-          <p>Photo *</p>
+          <p style={{ marginTop: "30px" }}>Photo *</p>
           <input
+            className="photo-offer"
             placeholder="Choose file"
             type="file"
             onChange={event => {
               setFile(event.target.files[0]);
             }}
           />
-          <input type="submit" value="Publier" />
+
+          <input
+            className="button-publish"
+            style={{ marginTop: "28px" }}
+            type="submit"
+            value="Valider"
+          />
         </form>
       </div>
     );
@@ -99,4 +109,5 @@ const Publish = ({ setUser }) => {
     return <Redirect to="/log_in" />;
   }
 };
+
 export default Publish;

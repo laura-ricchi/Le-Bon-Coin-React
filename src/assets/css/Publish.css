@@ -1,5 +1,69 @@
 .offer-publish {
-  display: flex;
-  flex-direction: column;
+  width: 1000px;
+  height: 714px;
+  margin: 44 220 142 220px;
+}
+form {
+  background-color: tomato;
+}
+
+h3 {
+  background-color: teal;
   justify-content: center;
+  margin-top: 44px;
+  height: 28px;
+  width: 350px;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 22px;
+  text-align: center;
+  color: #000000;
+}
+p {
+  font-weight: bold;
+  background-color: turquoise;
+}
+
+hr {
+  border: 3px solid #f56b2a;
+  width: 350px;
+}
+
+.title-offer {
+  width: 350px;
+  height: 44px;
+  border: 1px solid #d9e0eb;
+  border-radius: 5px;
+}
+.text-offer {
+  width: 350px;
+  height: 139px;
+  background: #ffffff;
+  border: 1px solid #d9e0eb;
+  border-radius: 5px;
+}
+.price-offer {
+  justify-content: center;
+  width: 165px;
+  height: 44px;
+  background: #ffffff;
+  border: 1px solid #d9e0eb;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.photo-offer {
+  width: 202px;
+  height: 38px;
+}
+.button-publish {
+  display: flex;
+  justify-content: center;
+  width: 350px;
+  height: 44px;
+  background: #4183d7;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+  font-weight: bold;
 }
