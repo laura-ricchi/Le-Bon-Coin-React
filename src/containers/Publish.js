@@ -6,14 +6,13 @@ import "../assets/css/Publish.css";
 
 // Publish : page de création d'annonces
 
-const token = Cookies.get("userToken");
-
 const Publish = ({ setUser }) => {
+  const token = Cookies.get("userToken");
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
   const [price, setPrice] = useState("");
   const [file, setFile] = useState({});
-
+  console.log(token);
   if (token) {
     return (
       <div className="offer-publish">
