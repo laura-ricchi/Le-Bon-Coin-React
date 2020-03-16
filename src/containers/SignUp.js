@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-solid-svg-icons";
 import { faBell } from "@fortawesome/free-solid-svg-icons";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
+import { Helmet } from "react-helmet";
 
 // SignUp : page de création de compte
 
@@ -19,7 +20,10 @@ const SignUp = ({ setUser }) => {
 
   return (
     <div className="main-register">
-      <h2>Créez un compte</h2>
+      <h2>Créer un compte</h2>
+      <Helmet>
+        <title>Créez votre compte</title>
+      </Helmet>
       <form
         onSubmit={async event => {
           event.preventDefault();

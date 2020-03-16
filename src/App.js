@@ -9,6 +9,9 @@ import Publish from "./containers/Publish";
 import Header from "./components/Header";
 import Cookies from "js-cookie";
 
+// import { Elements, StripeProvider } from "react-stripe-elements";
+// import CheckoutForm from "./containers/Payment";
+
 function App() {
   const tokenFromCookie = Cookies.get("userToken");
 
@@ -25,6 +28,9 @@ function App() {
     <Router>
       <Header user={user} setUser={setUser} />
       <Switch>
+        {/* <Route path="/payment">
+          <Payment stripe={stripe} />
+        </Route> */}
         <Route path="/offer/publish">
           <Publish setUser={setUser} />
         </Route>

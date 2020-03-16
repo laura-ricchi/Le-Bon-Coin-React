@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "../assets/css/Offers.css";
+import { Helmet } from "react-helmet";
 
 //offers = page d'accueil
 
@@ -29,6 +30,9 @@ const Offers = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Toutes les annonces</title>
+      </Helmet>
       {isLoading === true ? (
         <p>En cours de chargement...</p>
       ) : (

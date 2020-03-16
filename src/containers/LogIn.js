@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Cookies from "js-cookie";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 const LogIn = props => {
   const history = useHistory();
@@ -12,6 +13,9 @@ const LogIn = props => {
   return (
     <>
       <div>
+        <Helmet>
+          <title>Se connecter</title>
+        </Helmet>
         <h1>Connexion</h1>
         <form
           onSubmit={async event => {

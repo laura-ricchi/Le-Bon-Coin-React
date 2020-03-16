@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
@@ -50,10 +51,19 @@ const Offer = () => {
             <div className="offer-username">
               {data.creator.account.username}
             </div>
-
-            <button>
+            )}
+            {/* <button onClick={() => {
+              if (user === null) {
+                <Redirect to="/log_in"/>
+              } else {
+                <Redirect to="/Payment"/>
+                history.push("/Payment", 
+                {title: data.title},
+                {pricedata.price}) */}
+            <button onClick={() => {}}>
               <div className="icon-offer">
                 <FontAwesomeIcon icon={faCartPlus} />
+
                 <span>Acheter</span>
               </div>
             </button>

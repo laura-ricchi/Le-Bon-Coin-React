@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { Redirect } from "react-router-dom";
+import { Helmet } from "react-helmet";
+
 import "../assets/css/Publish.css";
 
 // Publish : page de création d'annonces
@@ -16,6 +18,9 @@ const Publish = ({ setUser }) => {
   if (token) {
     return (
       <div className="offer-publish">
+        <Helmet>
+          <title>Déposer une annonce</title>
+        </Helmet>
         <h3>Déposer une annonce</h3>
         <hr></hr>
 
