@@ -4,6 +4,8 @@ import axios from "axios";
 import "../assets/css/Offers.css";
 import Search from "../components/Search";
 import { Helmet } from "react-helmet";
+const moment = require("moment");
+require("moment/locale/fr");
 
 //offers = page d'accueil
 
@@ -39,25 +41,33 @@ const Offers = () => {
         <p>En cours de chargement...</p>
       ) : (
         <div className="all-offers">
-          <ul>
-            {data.map((element, index) => {
-              if (element.pictures.length === 0) {
-                return null;
-              }
-              console.log(element);
-              return (
+          {data.map((element, index) => {
+            if (element.pictures.length === 0) {
+              return null;
+            }
+            return (
+              <div className="container-offers">
                 <Link to={"/offer/" + element._id} key={index}>
-                  <li key={element._id}>
-                    <div className="offer-title">{element.title}</div>
-                    <div className="offer-price">{element.price}</div>
-                    <div>
-                      <img alt="pictures" src={element.pictures[0]} />
-                    </div>
-                  </li>
+                  <div className="container-picture-offers">
+                    <img
+                      alt="pictures"
+                      src={element.pictures[0]}
+                      className="pictures-offers"
+                    />
+                  </div>
                 </Link>
-              );
-            })}
-          </ul>
+
+                <div className="container-description-offers">
+                  <div className="offer-title">{element.title}</div>
+                  <div className="offer-price">{element.price} €</div>
+                  <div className="offer-date">
+                    {moment(element.created).format("L")} à{" "}
+                    {moment(element.created).format("hh:mm")}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       )}
     </>
