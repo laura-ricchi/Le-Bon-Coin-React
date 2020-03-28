@@ -1,2 +1,7 @@
-
-
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #eeeeeb;
+  color: #000a12;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

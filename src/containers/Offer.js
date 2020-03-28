@@ -59,7 +59,7 @@ const Offer = () => {
                 <Redirect to="/Payment"/>
                 history.push("/Payment", 
                 {title: data.title},
-                {pricedata.price}) */}
+                {price : data.price}) */}
             <button onClick={() => {}}>
               <div className="icon-offer">
                 <FontAwesomeIcon icon={faCartPlus} />

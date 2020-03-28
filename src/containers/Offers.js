@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "../assets/css/Offers.css";
+import Search from "../components/Search";
 import { Helmet } from "react-helmet";
 
 //offers = page d'accueil
 
 const Offers = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [data, setData] = useState({});
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,6 +34,7 @@ const Offers = () => {
       <Helmet>
         <title>Toutes les annonces</title>
       </Helmet>
+      <Search setData={setData} />
       {isLoading === true ? (
         <p>En cours de chargement...</p>
       ) : (
