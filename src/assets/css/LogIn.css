@@ -1,0 +1,46 @@
+.container-form-login {
+  display: flex;
+  justify-content: center;
+  background: #fafafa;
+  width: 1440px;
+  height: 960px;
+  margin-top: 50px;
+}
+.form-login {
+  background: #ffffff;
+  width: 700px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.input-login {
+  width: 560px;
+  height: 44px;
+  justify-content: center;
+}
+.button-submit {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  width: 560px;
+  height: 44px;
+  background: #4183d7;
+  border-radius: 5px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+}
+.no-account {
+  text-align: center;
+}
+.create-account {
+  width: 560px;
+  height: 44px;
+  background: #ffffff;
+  border: 1px solid #4183d7;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #4183d7;
+}

@@ -21,7 +21,7 @@ const Publish = ({ setUser }) => {
         <Helmet>
           <title>Déposer une annonce</title>
         </Helmet>
-        <h3>Déposer une annonce</h3>
+        <h2>Déposer une annonce</h2>
         <hr></hr>
 
         <form

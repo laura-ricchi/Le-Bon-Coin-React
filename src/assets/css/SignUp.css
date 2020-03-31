@@ -1,0 +1,35 @@
+.main-container-signup {
+  width: 1440px;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+.container-signup {
+  display: flex;
+  width: 1000px;
+  height: 576px;
+  margin-top: 57px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+.container-why-create-account,
+.container-form-signup {
+  background: #ffffff;
+}
+
+.title-create-account {
+  font-weight: bold;
+  font-size: 19px;
+  margin: 30px 0px 47px 55px;
+}
+.text-block {
+  display: flex;
+}
+.icon {
+  margin: 48px 33px 0px 62px;
+}
+h3 {
+  margin-top: 49px;
+}
+.text-reason {
+  width: 363px;
+}

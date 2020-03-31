@@ -3,30 +3,6 @@
   height: 714px;
   margin: 44 220 142 220px;
 }
-/* form {
-  background-color: tomato;
-} */
-
-h3 {
-  background-color: teal;
-  justify-content: center;
-  margin-top: 44px;
-  height: 28px;
-  width: 350px;
-  font-weight: bold;
-  font-size: 19px;
-  line-height: 22px;
-  text-align: center;
-  color: #000000;
-}
-p {
-  font-weight: bold;
-}
-
-hr {
-  border: 3px solid #f56b2a;
-  width: 350px;
-}
 
 .title-offer {
   width: 350px;

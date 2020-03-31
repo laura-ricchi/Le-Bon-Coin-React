@@ -21,8 +21,8 @@ const Header = ({ user, setUser }) => {
         <button className="create-offer">
           <div className="icon-plus">
             <FontAwesomeIcon icon={faPlusSquare} />
+            <span> Déposer une annonce</span>
           </div>
-          <span>Déposer une annonce</span>
         </button>
       </Link>
       <div className="search">

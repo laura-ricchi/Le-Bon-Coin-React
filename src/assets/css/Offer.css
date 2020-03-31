@@ -27,9 +27,6 @@
   margin-left: 29px;
 }
 .offer-title {
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: normal;
   font-size: 26px;
   line-height: 30px;
   color: #000000;
@@ -40,8 +37,6 @@
   margin-top: 27px;
 }
 .description-offer {
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
   font-weight: bold;
   font-size: 19px;
   line-height: 140%;
@@ -50,8 +45,6 @@
 .offer-description {
   width: 700px;
   height: 108px;
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
   font-weight: normal;
   font-size: 19px;
   line-height: 140%;
@@ -66,12 +59,10 @@
   align-items: center;
 }
 .offer-username {
-  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 23px;
   line-height: 140%;
-  color: #000000;
   margin: 19px 196px 5px 22px;
 }
 .button-buy-offer {
@@ -79,8 +70,6 @@
   height: 44px;
   background: #f56b2a;
   border-radius: 5px;
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
   font-weight: bold;
   font-size: 16px;
   line-height: 19px;
