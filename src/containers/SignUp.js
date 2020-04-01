@@ -16,6 +16,7 @@ const SignUp = ({ setUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [checkbox, setCheckbox] = useState(false);
 
   const history = useHistory();
 
@@ -108,49 +109,59 @@ const SignUp = ({ setUser }) => {
               }
             }}
           >
-            <h2>Créer un compte</h2>
+            <div className="create-account-signup">Créer un compte</div>
             <hr></hr>
-            <p>Pseudo *</p>
-            <input
-              type="text"
-              value={username}
-              onChange={event => {
-                setUsername(event.target.value);
-              }}
-            />
-            <p>Adresse mail *</p>
-            <input
-              type="email"
-              value={email}
-              onChange={event => {
-                setEmail(event.target.value);
-              }}
-            />
-            <p>Mot de passe *</p>
-            <input
-              type="password"
-              value={password}
-              onChange={event => {
-                setPassword(event.target.value);
-              }}
-            />
-            <p>Confirmer le mot de passe *</p>
-            <input
-              type="password"
-              value={confirmPassword}
-              onChange={event => {
-                setConfirmPassword(event.target.value);
-              }}
-            />
-            <div>
-              <input type="checkbox" className="checkbox" />
-              <span>
-                J’accepte les Conditions Générales de Vente et les Conditions
-                Générales d'Utilisation
-              </span>
+            <div className="input-create-account">
+              <p>Pseudo *</p>
+              <input
+                className="input-signup"
+                type="text"
+                value={username}
+                onChange={event => {
+                  setUsername(event.target.value);
+                }}
+              />
+              <p>Adresse mail *</p>
+              <input
+                className="input-signup"
+                type="email"
+                value={email}
+                onChange={event => {
+                  setEmail(event.target.value);
+                }}
+              />
+              <p>Mot de passe *</p>
+              <input
+                className="input-signup"
+                type="password"
+                value={password}
+                onChange={event => {
+                  setPassword(event.target.value);
+                }}
+              />
+              <p>Confirmer le mot de passe *</p>
+              <input
+                className="input-signup"
+                type="password"
+                value={confirmPassword}
+                onChange={event => {
+                  setConfirmPassword(event.target.value);
+                }}
+              />
             </div>
 
-            <input type="submit" value="Créer mon Compte Personnel" />
+            <div className="checkbox-input">
+              <input onChange={() => setCheckbox(!checkbox)} type="checkbox" />
+              <p>
+                « J’accepte les <span>Conditions Générales de Vente </span>et
+                les <span>Conditions Générales d'Utilisation</span> »
+              </p>
+            </div>
+            <input
+              type="submit"
+              value="Créer mon Compte Personnel"
+              className="button-create-account"
+            />
           </form>
         </div>
       </div>

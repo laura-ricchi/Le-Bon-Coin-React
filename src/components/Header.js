@@ -21,7 +21,7 @@ const Header = ({ user, setUser }) => {
         <button className="create-offer">
           <div className="icon-plus">
             <FontAwesomeIcon icon={faPlusSquare} />
-            <span> Déposer une annonce</span>
+            Déposer une annonce
           </div>
         </button>
       </Link>
@@ -29,7 +29,7 @@ const Header = ({ user, setUser }) => {
         <div className="icon-search">
           <FontAwesomeIcon icon={faSearch} />
         </div>
-        <span>Rechercher</span>
+        Rechercher
       </div>
 
       {user === null ? (
@@ -38,7 +38,7 @@ const Header = ({ user, setUser }) => {
             <div className="icon-user">
               <FontAwesomeIcon icon={faUser} />
             </div>
-            <span>Se connecter</span>
+            Se connecter
           </div>
         </Link>
       ) : (

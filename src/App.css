@@ -20,7 +20,6 @@ h2 {
   line-height: 22px;
   color: #000000;
 }
-
 h3 {
   font-style: normal;
   font-weight: bold;
@@ -35,4 +34,8 @@ p {
 hr {
   border: 3px solid #f56b2a;
   width: 350px;
+}
+span {
+  font-weight: bold;
+  font-size: 12px;
 }
