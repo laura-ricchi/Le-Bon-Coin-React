@@ -17,7 +17,7 @@ const Offer = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://leboncoin-api.herokuapp.com/api/offer/" + id
+          "https://my-project-backend-leboncoin.herokuapp.com/offer/" + id
         );
         setData(response.data);
         setIsLoading(false);

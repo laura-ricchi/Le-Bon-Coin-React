@@ -12,12 +12,13 @@ require("moment/locale/fr");
 const Offers = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
+  const [skip, setSkip] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://leboncoin-api.herokuapp.com/api/offer/with-count"
+          `https://my-project-backend-leboncoin.herokuapp.com/offers/with-count?skip=${skip}&limit=3`
         );
         setData(response.data.offers);
         console.log(response.data);
@@ -29,7 +30,7 @@ const Offers = () => {
     };
 
     fetchData();
-  }, []);
+  }, [skip]);
 
   return (
     <>
@@ -41,7 +42,7 @@ const Offers = () => {
         <p>En cours de chargement...</p>
       ) : (
         <div className="all-offers">
-          {data.map((element, index) => {
+          {data.products.map((element, index) => {
             if (element.pictures.length === 0) {
               return null;
             }

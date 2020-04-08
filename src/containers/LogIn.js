@@ -5,9 +5,8 @@ import axios from "axios";
 import { Helmet } from "react-helmet";
 import "../assets/css/LogIn.css";
 
-const LogIn = props => {
+const LogIn = (props) => {
   const history = useHistory();
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -21,14 +20,14 @@ const LogIn = props => {
           <h1>Connexion</h1>
           <hr></hr>
           <form
-            onSubmit={async event => {
+            onSubmit={async (event) => {
               event.preventDefault();
               try {
                 const response = await axios.post(
-                  "https://leboncoin-api.herokuapp.com/api/user/log_in",
+                  "https://my-project-backend-leboncoin.herokuapp.com/login",
                   {
                     email,
-                    password
+                    password,
                   }
                 );
 
@@ -43,7 +42,7 @@ const LogIn = props => {
 
                   // Remplacer le bouton "Se connecter" par "Se déconnecter"
                   props.setUser({
-                    token: token
+                    token: token,
                   });
                   // Aller sur la page d'accueil
                   // Changement de page
@@ -62,7 +61,7 @@ const LogIn = props => {
                 className="input-login"
                 type="email"
                 value={email}
-                onChange={event => {
+                onChange={(event) => {
                   const value = event.target.value;
                   setEmail(value);
                 }}
@@ -72,7 +71,7 @@ const LogIn = props => {
                 className="input-login"
                 type="password"
                 value={password}
-                onChange={event => {
+                onChange={(event) => {
                   const value = event.target.value;
                   setPassword(value);
                 }}

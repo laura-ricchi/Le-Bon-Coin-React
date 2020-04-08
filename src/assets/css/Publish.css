@@ -1,44 +1,43 @@
+.offer-publish-container {
+  background: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .offer-publish {
   width: 1000px;
   height: 714px;
-  margin: 44 220 142 220px;
+  background: #ffffff;
 }
-
-.title-offer {
+.title-publish {
+  display: flex;
+  justify-content: center;
+  margin: 33px 0px 21px 0px;
+}
+.input-title-publish {
   width: 350px;
   height: 44px;
-  border: 1px solid #d9e0eb;
-  border-radius: 5px;
 }
-.text-offer {
+.input-text-publish {
   width: 350px;
   height: 139px;
-  background: #ffffff;
-  border: 1px solid #d9e0eb;
-  border-radius: 5px;
 }
-.price-offer {
-  justify-content: center;
+.input-price-publish {
   width: 165px;
   height: 44px;
+}
+.input-title-publish,
+.input-text-publish,
+.input-price-publish {
   background: #ffffff;
   border: 1px solid #d9e0eb;
   box-sizing: border-box;
   border-radius: 5px;
 }
-.photo-offer {
-  width: 202px;
-  height: 38px;
+.form-publish-offer {
+  background-color: violet;
+  text-align: center;
 }
-.button-publish {
-  display: flex;
-  justify-content: center;
-  width: 350px;
-  height: 44px;
-  background: #4183d7;
-  border-radius: 5px;
-  font-size: 16px;
-  line-height: 19px;
-  color: #ffffff;
-  font-weight: bold;
+button {
+  margin-top: 36px;
 }

@@ -9,7 +9,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faPlusSquare } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
-const Header = ({ user, setUser }) => {
+const Header = ({ token, setToken, username }) => {
   const history = useHistory();
 
   return (
@@ -32,7 +32,7 @@ const Header = ({ user, setUser }) => {
         Rechercher
       </div>
 
-      {user === null ? (
+      {username === null ? (
         <Link to="/log_in" style={{ textDecoration: "none" }}>
           <div className="login">
             <div className="icon-user">
@@ -46,10 +46,11 @@ const Header = ({ user, setUser }) => {
           className="deconnect"
           onClick={() => {
             // Déconnexion
-            // Suppression du cookie userToken
-            Cookies.remove("userToken");
-            // Mettre l'état user à null
-            setUser(null);
+            setToken(null);
+            // Suppression du cookie "token"
+            Cookies.remove("token");
+            // Suppression du cookie "username"
+            Cookies.remove("username");
             // Aller sur la page d'accueil
             history.push("/");
           }}

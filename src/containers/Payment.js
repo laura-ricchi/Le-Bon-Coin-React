@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { CardElement, injectStripe } from "react-stripe-elements";
 import axios from "axios";
-import { useLocation } from "react-router-dom";
 
 const CheckoutForm = ({ stripe }) => {
   const [complete, setComplete] = useState(false);
@@ -12,9 +11,9 @@ const CheckoutForm = ({ stripe }) => {
       <CardElement />
 
       <button
-        onClick={async event => {
+        onClick={async (event) => {
           const stripeResponse = await stripe.createToken({
-            name: "Identifiant de l'acheteur"
+            name: "Identifiant de l'acheteur",
           });
 
           const stripeToken = stripeResponse.token.id;
@@ -27,7 +26,7 @@ const CheckoutForm = ({ stripe }) => {
             const paymentResponse = await axios.post(
               "https://localhost:3002/payment",
               {
-                stripeToken: stripeToken
+                stripeToken: stripeToken,
               }
             );
             console.log("paymentResponse", paymentResponse);

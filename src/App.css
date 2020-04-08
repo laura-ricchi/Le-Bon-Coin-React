@@ -10,21 +10,18 @@ h1 {
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
-  line-height: 28px;
   color: #000000;
 }
 h2 {
   font-style: normal;
   font-weight: bold;
   font-size: 19px;
-  line-height: 22px;
   color: #000000;
 }
 h3 {
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
-  line-height: 16px;
   color: #000000;
 }
 p {
@@ -38,4 +35,22 @@ hr {
 span {
   font-weight: bold;
   font-size: 12px;
+}
+input[type="submit"],
+input[type="button"],
+input[type="checkbox"],
+input[type="file"] {
+  cursor: pointer;
+}
+.form-publish-offer form input[type="button"],
+[type="submit"] {
+  width: 350px;
+  height: 44px;
+  background: #4183d7;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  color: #ffffff;
 }

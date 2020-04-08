@@ -20,6 +20,44 @@ const SignUp = ({ setUser }) => {
 
   const history = useHistory();
 
+  const handleSignUpSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      if (!username || !email || !password || !confirmPassword || !checkbox) {
+        alert("Merci de remplir tous les champs");
+      } else if (password !== confirmPassword) {
+        alert("Vos mots de passe ne sont pas identiques");
+      } else if (!checkbox) {
+        alert("Merci de cocher les CGV et CGU");
+      } else {
+        const response = await axios.post(
+          " https://my-project-backend-leboncoin.herokuapp.com/user/sign_up",
+          {
+            email: email,
+            username: username,
+            password: password,
+          }
+        );
+
+        console.log(response.data);
+
+        if (response.data.token) {
+          const token = response.data.token;
+
+          Cookies.set("userToken", token, { expires: 2000 });
+          setUser({
+            token: token,
+          });
+
+          history.push("/");
+        }
+      }
+    } catch (error) {
+      alert("An error occured");
+      console.log("error.message = ", error);
+    }
+  };
+
   return (
     <div className="main-container-signup">
       <div className="container-signup">
@@ -34,7 +72,7 @@ const SignUp = ({ setUser }) => {
             </div>
             <div className="text-block">
               <div className="icon">
-                <FontAwesomeIcon icon={faClock} size={35} />
+                <FontAwesomeIcon icon={faClock} />
               </div>
               <div className="text-reason">
                 <h3>Gagnez du temps </h3>
@@ -75,40 +113,7 @@ const SignUp = ({ setUser }) => {
         </div>
 
         <div className="container-form-signup">
-          <form
-            onSubmit={async event => {
-              event.preventDefault();
-
-              if (password === confirmPassword) {
-                try {
-                  const response = await axios.post(
-                    " https://leboncoin-api.herokuapp.com/api/user/sign_up",
-                    {
-                      username,
-                      email,
-                      password: password
-                    }
-                  );
-
-                  console.log(response.data);
-
-                  if (response.data.token) {
-                    const token = response.data.token;
-
-                    Cookies.set("userToken", token, { expires: 2000 });
-                    setUser({
-                      token: token
-                    });
-
-                    history.push("/");
-                  }
-                } catch (error) {
-                  alert("An error occured");
-                  console.log("error.message = ", error);
-                }
-              }
-            }}
-          >
+          <form onSubmit={handleSignUpSubmit}>
             <div className="create-account-signup">Créer un compte</div>
             <hr></hr>
             <div className="input-create-account">
@@ -116,8 +121,7 @@ const SignUp = ({ setUser }) => {
               <input
                 className="input-signup"
                 type="text"
-                value={username}
-                onChange={event => {
+                onChange={(event) => {
                   setUsername(event.target.value);
                 }}
               />
@@ -125,8 +129,7 @@ const SignUp = ({ setUser }) => {
               <input
                 className="input-signup"
                 type="email"
-                value={email}
-                onChange={event => {
+                onChange={(event) => {
                   setEmail(event.target.value);
                 }}
               />
@@ -134,8 +137,7 @@ const SignUp = ({ setUser }) => {
               <input
                 className="input-signup"
                 type="password"
-                value={password}
-                onChange={event => {
+                onChange={(event) => {
                   setPassword(event.target.value);
                 }}
               />
@@ -143,8 +145,7 @@ const SignUp = ({ setUser }) => {
               <input
                 className="input-signup"
                 type="password"
-                value={confirmPassword}
-                onChange={event => {
+                onChange={(event) => {
                   setConfirmPassword(event.target.value);
                 }}
               />
