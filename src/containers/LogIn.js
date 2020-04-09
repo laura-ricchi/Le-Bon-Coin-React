@@ -5,7 +5,7 @@ import axios from "axios";
 import { Helmet } from "react-helmet";
 import "../assets/css/LogIn.css";
 
-const LogIn = (props) => {
+const LogIn = ({ onLogin }) => {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -33,17 +33,8 @@ const LogIn = (props) => {
 
                 if (response.data.token) {
                   console.log("response.data =", response.data);
+                  onLogin(response.data.token, response.data.account.username);
 
-                  //Appel du serveur pour transmettre un email et un mdp pour obtenir un token
-                  const token = response.data.token;
-
-                  // Sauvegarder le token dans les cookies
-                  Cookies.set("userToken", token, { expires: 2000 });
-
-                  // Remplacer le bouton "Se connecter" par "Se déconnecter"
-                  props.setUser({
-                    token: token,
-                  });
                   // Aller sur la page d'accueil
                   // Changement de page
                   history.push("/");
@@ -83,7 +74,7 @@ const LogIn = (props) => {
                 <p>Vous n'avez pas de compte ?</p>
 
                 <input
-                  onClick={() => history.push("/sign_up")}
+                  onClick={() => history.push("/signup")}
                   value="Créer un compte"
                   type="button"
                   className="create-account"

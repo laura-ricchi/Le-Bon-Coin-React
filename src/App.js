@@ -21,8 +21,8 @@ function App() {
     setToken(token);
     setUsername(username);
     // enregistement des données par le navigateur du nom et la valeur des cookies
-    Cookies.set("token", token);
-    Cookies.set("username", username);
+    Cookies.set("token", token, { expires: 2000 });
+    Cookies.set("username", username, { expires: 2000 });
   };
 
   return (

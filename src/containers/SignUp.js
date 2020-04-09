@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Cookies from "js-cookie";
 import { useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-solid-svg-icons";
@@ -11,46 +10,34 @@ import "../assets/css/SignUp.css";
 
 // SignUp : page de création de compte
 
-const SignUp = ({ setUser }) => {
+const SignUp = ({ onLogin }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [checkbox, setCheckbox] = useState(false);
-
   const history = useHistory();
 
   const handleSignUpSubmit = async (e) => {
     try {
       e.preventDefault();
-      if (!username || !email || !password || !confirmPassword || !checkbox) {
-        alert("Merci de remplir tous les champs");
-      } else if (password !== confirmPassword) {
+      if (password !== confirmPassword) {
         alert("Vos mots de passe ne sont pas identiques");
-      } else if (!checkbox) {
-        alert("Merci de cocher les CGV et CGU");
-      } else {
-        const response = await axios.post(
-          " https://my-project-backend-leboncoin.herokuapp.com/user/sign_up",
-          {
-            email: email,
-            username: username,
-            password: password,
-          }
-        );
-
-        console.log(response.data);
-
-        if (response.data.token) {
-          const token = response.data.token;
-
-          Cookies.set("userToken", token, { expires: 2000 });
-          setUser({
-            token: token,
-          });
-
-          history.push("/");
+      }
+      const response = await axios.post(
+        " https://my-project-backend-leboncoin.herokuapp.com/signup",
+        {
+          email,
+          username,
+          password,
         }
+      );
+      console.log(response.data);
+
+      if (response.data.token) {
+        onLogin(response.data.token, response.data.account.username);
+
+        history.push("/");
       }
     } catch (error) {
       alert("An error occured");
@@ -121,6 +108,7 @@ const SignUp = ({ setUser }) => {
               <input
                 className="input-signup"
                 type="text"
+                value={username}
                 onChange={(event) => {
                   setUsername(event.target.value);
                 }}
@@ -128,7 +116,8 @@ const SignUp = ({ setUser }) => {
               <p>Adresse mail *</p>
               <input
                 className="input-signup"
-                type="email"
+                type="text"
+                value={email}
                 onChange={(event) => {
                   setEmail(event.target.value);
                 }}
@@ -137,6 +126,7 @@ const SignUp = ({ setUser }) => {
               <input
                 className="input-signup"
                 type="password"
+                value={password}
                 onChange={(event) => {
                   setPassword(event.target.value);
                 }}
@@ -145,6 +135,7 @@ const SignUp = ({ setUser }) => {
               <input
                 className="input-signup"
                 type="password"
+                value={confirmPassword}
                 onChange={(event) => {
                   setConfirmPassword(event.target.value);
                 }}
