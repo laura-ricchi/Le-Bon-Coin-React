@@ -7,10 +7,10 @@ import "../assets/css/Publish.css";
 
 // Publish : page de création d'annonces
 
-const Publish = ({ setUser }) => {
+const Publish = () => {
   const token = Cookies.get("userToken");
   const [title, setTitle] = useState("");
-  const [text, setText] = useState("");
+  const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [file, setFile] = useState({});
 
@@ -27,12 +27,13 @@ const Publish = ({ setUser }) => {
           <hr></hr>
           <div className="form-publish-offer">
             <form
+              // Pour empêcher le navigateur de changer de page lors de la soumission du formulaire => preventDefault()
               onSubmit={async (event) => {
                 event.preventDefault();
-
+                // pour la transmission des fichiers vers le serveur, nous devons utiliser d'un objet FormData
                 const formData = new FormData();
                 formData.append("title", title);
-                formData.append("text", text);
+                formData.append("description", description);
                 formData.append("price", price);
                 formData.append("picture", file);
 
@@ -47,20 +48,17 @@ const Publish = ({ setUser }) => {
                       },
                     }
                   );
-                  if (response.data.token) {
-                    Cookies.set("userToken", token, { expires: 100 });
-                    setUser({
-                      token: token,
-                    });
-                  } else {
-                    console.log("erreur");
-                  }
+                  alert(JSON.stringify(response.data));
                 } catch (error) {
-                  console.log("error.message = ", error);
+                  if (error.response.status === 500) {
+                    console.error("An error occurred");
+                  } else {
+                    console.error(error.message);
+                  }
                 }
               }}
             >
-              <p>Titre de l'annonce *</p>
+              <p style={{ marginTop: "33px" }}>Titre de l'annonce *</p>
               <input
                 className="input-title-publish"
                 type="text"
@@ -73,9 +71,9 @@ const Publish = ({ setUser }) => {
               <input
                 className="input-text-publish"
                 type="text"
-                value={text}
+                value={description}
                 onChange={(event) => {
-                  setText(event.target.value);
+                  setDescription(event.target.value);
                 }}
               />
               <p>Prix *</p>
@@ -96,14 +94,15 @@ const Publish = ({ setUser }) => {
                   setFile(event.target.files[0]);
                 }}
               />
-              <input className="button-publish" type="submit" value="Valider" />
+              <br></br>
+              <input type="submit" value="Valider" />
             </form>
           </div>
         </div>
       </div>
     );
   } else {
-    return <Redirect to="/log_in" />;
+    return <Redirect to="/login" />;
   }
 };
 

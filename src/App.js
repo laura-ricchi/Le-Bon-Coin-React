@@ -41,7 +41,7 @@ function App() {
         <Route path="/offer/:id">
           <Offer />
         </Route>
-        <Route path="/offer/publish">
+        <Route path="/publish">
           <Publish />
         </Route>
         <Route path="/payment">
