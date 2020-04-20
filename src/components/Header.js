@@ -32,8 +32,8 @@ const Header = ({ token, setToken, username }) => {
         Rechercher
       </div>
 
-      {username === null ? (
-        <Link to="/log_in" style={{ textDecoration: "none" }}>
+      {token === null ? (
+        <Link to="/login" style={{ textDecoration: "none" }}>
           <div className="login">
             <div className="icon-user">
               <FontAwesomeIcon icon={faUser} />
@@ -45,7 +45,7 @@ const Header = ({ token, setToken, username }) => {
         <div
           className="deconnect"
           onClick={() => {
-            // Déconnexion
+            // Mise à jour du state setToken => déconnexion
             setToken(null);
             // Suppression du cookie "token"
             Cookies.remove("token");
@@ -58,6 +58,7 @@ const Header = ({ token, setToken, username }) => {
           <div className="icon-user">
             <FontAwesomeIcon icon={faUser} />
           </div>
+          <p>{username}</p>
           <span>Se déconnecter</span>
         </div>
       )}

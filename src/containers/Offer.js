@@ -7,19 +7,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import Moment from "react-moment";
 
-const Offer = () => {
+const Offer = ({ onLogin }) => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
-  const { id } = useParams();
+  const params = useParams();
+  let id = params.id;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://my-project-backend-leboncoin.herokuapp.com/offer/" + id
+          `https://my-project-backend-leboncoin.herokuapp.com/offer/${id}`
         );
-        setData(response.data);
+        console.log(response.data);
+        console.log(response.data.offer);
+        setData(response.data.offers);
         setIsLoading(false);
       } catch (e) {
         console.log("error");
@@ -39,7 +42,7 @@ const Offer = () => {
       ) : (
         <div className="container-offer">
           <div className="container-picture-price">
-            <img className="picture-offer" alt="offer" src={data.pictures[0]} />
+            <img className="picture-offer" alt="offer" src={data.pictures} />
 
             <div className="container-info-offer">
               <div className="offer-title">{data.title}</div>
@@ -57,7 +60,7 @@ const Offer = () => {
           <div className="offer-creator">
             <div className="infos-user">
               <div className="offer-username">
-                {data.creator.account.username}
+                {/* {data.creator.account} */}
               </div>
             </div>
 

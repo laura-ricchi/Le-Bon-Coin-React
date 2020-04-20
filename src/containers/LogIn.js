@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Cookies from "js-cookie";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { Helmet } from "react-helmet";
@@ -31,13 +30,14 @@ const LogIn = ({ onLogin }) => {
                   }
                 );
 
+                // si le token est récupéré lors de la requête sur le backend
                 if (response.data.token) {
                   console.log("response.data =", response.data);
+                  // met à jour la variable onLogin
                   onLogin(response.data.token, response.data.account.username);
-
-                  // Aller sur la page d'accueil
-                  // Changement de page
+                  // et aller sur la page d'accueil - Changement de page - avec le token de l'user
                   history.push("/");
+                  // sinon afficher un message d'erreur
                 } else {
                   alert("Token is missing");
                 }

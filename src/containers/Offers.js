@@ -4,6 +4,7 @@ import axios from "axios";
 import "../assets/css/Offers.css";
 import Search from "../components/Search";
 import { Helmet } from "react-helmet";
+import Pagination from "../components/Pagination";
 const moment = require("moment");
 require("moment/locale/fr");
 
@@ -42,10 +43,10 @@ const Offers = () => {
         <p>En cours de chargement...</p>
       ) : (
         <div className="all-offers">
-          {data.products.map((element, index) => {
-            if (element.pictures.length === 0) {
-              return null;
-            }
+          {data.map((element, index) => {
+            // if (element.pictures.length === 0) {
+            //   return null;
+            // }
             return (
               <div className="container-offers">
                 <Link to={"/offer/" + element._id} key={index}>
@@ -66,6 +67,7 @@ const Offers = () => {
                     {moment(element.created).format("hh:mm")}
                   </div>
                 </div>
+                <Pagination count={data.count} skip={skip} setSkip={setSkip} />
               </div>
             );
           })}
