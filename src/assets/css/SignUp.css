@@ -1,12 +1,11 @@
 .main-container-signup {
-  width: 1440px;
   display: flex;
-  flex: 1;
   justify-content: center;
 }
 .container-signup {
   display: flex;
   width: 1000px;
+  height: 576px;
   margin-top: 57px;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
 }
@@ -30,7 +29,6 @@
   width: 363px;
   margin: 40px 125px 0px 0px;
 }
-
 .create-account-signup {
   display: flex;
   justify-content: center;
@@ -41,11 +39,7 @@
 .input-create-account {
   display: flex;
   flex-direction: column;
-}
-.input-create-account > p {
-  font-weight: bold;
-  font-size: 14px;
-  margin-left: 80px;
+  text-align: center;
 }
 .input-signup {
   width: 350px;

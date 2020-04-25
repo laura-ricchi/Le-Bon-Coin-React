@@ -1,9 +1,8 @@
-.container-offer {
+/* .container {
   display: flex;
   flex-direction: column;
-  width: 1440px;
-  height: 100%;
-}
+  width: 1240px;
+} */
 .container-picture-price {
   display: flex;
   flex: 1;

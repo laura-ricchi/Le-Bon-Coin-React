@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { Helmet } from "react-helmet";
+import "../App.css";
 import "../assets/css/LogIn.css";
 
 const LogIn = ({ onLogin }) => {
@@ -10,9 +11,9 @@ const LogIn = ({ onLogin }) => {
   const [password, setPassword] = useState("");
 
   return (
-    <>
+    <div className="container">
       <Helmet>
-        <title>Se connecter</title>
+        <title>Se connecter à votre compte</title>
       </Helmet>
       <div className="container-form-login">
         <div className="form-login">
@@ -47,7 +48,7 @@ const LogIn = ({ onLogin }) => {
             }}
           >
             <div className="form-login">
-              <p>Adresse mail</p>
+              <h4>Adresse mail</h4>
               <input
                 className="input-login"
                 type="email"
@@ -57,7 +58,7 @@ const LogIn = ({ onLogin }) => {
                   setEmail(value);
                 }}
               />
-              <p>Mot de passe</p>
+              <h4>Mot de passe</h4>
               <input
                 className="input-login"
                 type="password"
@@ -84,7 +85,7 @@ const LogIn = ({ onLogin }) => {
           </form>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

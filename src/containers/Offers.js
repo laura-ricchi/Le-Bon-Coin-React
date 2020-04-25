@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import "../App.css";
 import "../assets/css/Offers.css";
 import Search from "../components/Search";
 import { Helmet } from "react-helmet";
@@ -9,7 +10,6 @@ const moment = require("moment");
 require("moment/locale/fr");
 
 //offers = page d'accueil
-
 const Offers = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
@@ -23,7 +23,6 @@ const Offers = () => {
         );
         setData(response.data.offers);
         console.log(response.data);
-
         setIsLoading(false);
       } catch (e) {
         console.log("error");
@@ -42,11 +41,8 @@ const Offers = () => {
       {isLoading === true ? (
         <p>En cours de chargement...</p>
       ) : (
-        <div className="all-offers">
+        <div className="container">
           {data.map((element, index) => {
-            // if (element.pictures.length === 0) {
-            //   return null;
-            // }
             return (
               <div className="container-offers">
                 <Link to={"/offer/" + element._id} key={index}>

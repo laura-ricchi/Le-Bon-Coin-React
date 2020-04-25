@@ -1,9 +1,5 @@
-.search-container {
-  width: 1440px;
-  display: flex;
-}
 .ellipsis-container {
-  width: 1440px;
+  width: 1240px;
   height: 100px;
   background: #f56b2a;
   border-radius: 0% 0% 70% 70%;

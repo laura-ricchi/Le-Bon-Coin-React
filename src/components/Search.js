@@ -4,7 +4,7 @@ import "../assets/css/Search.css";
 
 const Search = ({ setData }) => {
   const [searchInput, setSearchInput] = useState("");
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await axios.get(
       `https://leboncoin-api-final.herokuapp.com/offer/with-count?title=${searchInput}`
@@ -13,7 +13,7 @@ const Search = ({ setData }) => {
   };
 
   return (
-    <div className="search-container">
+    <div className="container">
       <div className="ellipsis-container">
         <div>
           <div className="container-form">
@@ -23,7 +23,7 @@ const Search = ({ setData }) => {
                   className="search-input"
                   placeholder="Que recherchez-vous ?"
                   type="text"
-                  onChange={event => setSearchInput(event.target.value)}
+                  onChange={(event) => setSearchInput(event.target.value)}
                 />
                 <input
                   className="button-search"

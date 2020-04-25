@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import "../App.css";
 import "../assets/css/Offer.css";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,8 +12,7 @@ const Offer = ({ onLogin }) => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
-  const params = useParams();
-  let id = params.id;
+  const { id } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -40,10 +40,9 @@ const Offer = ({ onLogin }) => {
       {isLoading === true ? (
         <p>En cours de chargement ...</p>
       ) : (
-        <div className="container-offer">
+        <div className="container">
           <div className="container-picture-price">
             <img className="picture-offer" alt="offer" src={data.pictures} />
-
             <div className="container-info-offer">
               <div className="offer-title">{data.title}</div>
               <div className="offer-price">{data.price}€</div>
@@ -59,20 +58,8 @@ const Offer = ({ onLogin }) => {
 
           <div className="offer-creator">
             <div className="infos-user">
-              <div className="offer-username">
-                {/* {data.creator.account} */}
-              </div>
+              <div className="offer-username">{data.creator.account}</div>
             </div>
-
-            {/* <button onClick={() => {
-              if (user === null) {
-                <Redirect to="/log_in"/>
-              } else {
-                <Redirect to="/Payment"/>
-                history.push("/Payment", 
-                {title: data.title},
-                {price : data.price}) */}
-
             <div className="buy-offer">
               <button className="button-buy-offer" onClick={() => {}}>
                 <FontAwesomeIcon icon={faCartPlus} />

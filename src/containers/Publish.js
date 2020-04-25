@@ -20,7 +20,7 @@ const Publish = () => {
   console.log(token);
 
   // Pour empêcher le navigateur de changer de page lors de la soumission du formulaire => preventDefault()
-  const onSubmit = async (event) => {
+  const formOnSubmit = async (event) => {
     event.preventDefault();
     // pour la transmission des fichiers vers le serveur, nous devons utiliser d'un objet de type FormData
     const formData = new FormData();
@@ -43,7 +43,7 @@ const Publish = () => {
           },
         }
       );
-      console.log(response.data.offers);
+      console.log(response.data.offer);
       // Aller sur la page d'accueil
       // Changement de page
       history.push("/");
@@ -63,7 +63,7 @@ const Publish = () => {
         </div>
         <hr></hr>
         <div className="form-publish-offer">
-          <form onSubmit={onSubmit}>
+          <form onSubmit={formOnSubmit}>
             <p style={{ marginTop: "33px" }}>Titre de l'annonce *</p>
             <input
               className="input-title-publish"

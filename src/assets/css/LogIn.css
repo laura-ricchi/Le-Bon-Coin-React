@@ -2,8 +2,6 @@
   display: flex;
   justify-content: center;
   background: #fafafa;
-  width: 1440px;
-  height: 960px;
   margin-top: 50px;
 }
 .form-login {

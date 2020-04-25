@@ -17,7 +17,7 @@ const Header = ({ token, setToken, username }) => {
       <Link to="/">
         <img src={logo} className="logo" alt="logo" />
       </Link>
-      <Link to="/offer/publish" style={{ textDecoration: "none" }}>
+      <Link to="/offers/publish" style={{ textDecoration: "none" }}>
         <button className="create-offer">
           <div className="icon-plus">
             <FontAwesomeIcon icon={faPlusSquare} />

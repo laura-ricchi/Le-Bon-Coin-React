@@ -38,11 +38,11 @@ function App() {
         <Route path="/signup">
           <SignUp onLogin={onLogin} />
         </Route>
-        <Route exact path="/offer/publish">
-          <Publish />
-        </Route>
-        <Route path="/offer/:id">
+        <Route exact path="/offer/:id">
           <Offer />
+        </Route>
+        <Route exact path="/offers/publish">
+          <Publish />
         </Route>
         <Route path="/payment">
           <Payment />
