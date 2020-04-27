@@ -8,6 +8,7 @@ import LogIn from "./containers/LogIn";
 import Payment from "./containers/Payment";
 import Publish from "./containers/Publish";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Cookies from "js-cookie";
 
 function App() {
@@ -48,7 +49,7 @@ function App() {
           <Payment />
         </Route>
       </Switch>
-      <footer>Made by Laura @ LeReacTeuR </footer>
+      <Footer />
     </Router>
   );
 }

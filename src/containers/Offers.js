@@ -42,31 +42,37 @@ const Offers = () => {
         <p>En cours de chargement...</p>
       ) : (
         <div className="container">
-          {data.map((element, index) => {
-            return (
-              <div className="container-offers">
-                <Link to={"/offer/" + element._id} key={index}>
-                  <div className="container-picture-offers">
-                    <img
-                      alt="pictures"
-                      src={element.pictures[0]}
-                      className="pictures-offers"
-                    />
-                  </div>
-                </Link>
+          <div className="all-offers">
+            {data.map((element, index) => {
+              return (
+                <div className="container-offers">
+                  <Link to={"/offer/" + element._id} key={index}>
+                    <div className="container-picture-offers">
+                      <img
+                        alt="pictures"
+                        src={element.files.url}
+                        className="pictures-offers"
+                      />
+                    </div>
+                  </Link>
 
-                <div className="container-description-offers">
-                  <div className="offer-title">{element.title}</div>
-                  <div className="offer-price">{element.price} €</div>
-                  <div className="offer-date">
-                    {moment(element.created).format("L")} à{" "}
-                    {moment(element.created).format("hh:mm")}
+                  <div className="container-description-offers">
+                    <div className="offer-title">{element.title}</div>
+                    <div className="offer-price">{element.price} €</div>
+                    <div className="offer-date">
+                      {moment(element.created).format("L")} à{" "}
+                      {moment(element.created).format("hh:mm")}
+                    </div>
                   </div>
+                  <Pagination
+                    count={data.count}
+                    skip={skip}
+                    setSkip={setSkip}
+                  />
                 </div>
-                <Pagination count={data.count} skip={skip} setSkip={setSkip} />
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       )}
     </>

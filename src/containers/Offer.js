@@ -20,9 +20,8 @@ const Offer = ({ onLogin }) => {
         const response = await axios.get(
           `https://my-project-backend-leboncoin.herokuapp.com/offer/${id}`
         );
-        console.log(response.data);
-        console.log(response.data.offer);
-        setData(response.data.offers);
+        console.log("response data", response.data);
+        setData(response.data);
         setIsLoading(false);
       } catch (e) {
         console.log("error");
@@ -42,7 +41,7 @@ const Offer = ({ onLogin }) => {
       ) : (
         <div className="container">
           <div className="container-picture-price">
-            <img className="picture-offer" alt="offer" src={data.pictures} />
+            <img className="picture-offer" alt="offer" src={data.files.url} />
             <div className="container-info-offer">
               <div className="offer-title">{data.title}</div>
               <div className="offer-price">{data.price}€</div>
@@ -58,7 +57,9 @@ const Offer = ({ onLogin }) => {
 
           <div className="offer-creator">
             <div className="infos-user">
-              <div className="offer-username">{data.creator.account}</div>
+              <div className="offer-username">
+                {data.creator.account.username}
+              </div>
             </div>
             <div className="buy-offer">
               <button className="button-buy-offer" onClick={() => {}}>

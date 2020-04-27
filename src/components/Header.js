@@ -19,25 +19,19 @@ const Header = ({ token, setToken, username }) => {
       </Link>
       <Link to="/offers/publish" style={{ textDecoration: "none" }}>
         <button className="create-offer">
-          <div className="icon-plus">
-            <FontAwesomeIcon icon={faPlusSquare} />
-            Déposer une annonce
-          </div>
+          <FontAwesomeIcon icon={faPlusSquare} className="icon-plus" />
+          Déposer une annonce
         </button>
       </Link>
       <div className="search">
-        <div className="icon-search">
-          <FontAwesomeIcon icon={faSearch} />
-        </div>
+        <FontAwesomeIcon icon={faSearch} className="icon-search" />
         Rechercher
       </div>
 
       {token === null ? (
         <Link to="/login" style={{ textDecoration: "none" }}>
           <div className="login">
-            <div className="icon-user">
-              <FontAwesomeIcon icon={faUser} />
-            </div>
+            <FontAwesomeIcon icon={faUser} className="icon-user" />
             Se connecter
           </div>
         </Link>
@@ -55,10 +49,8 @@ const Header = ({ token, setToken, username }) => {
             history.push("/");
           }}
         >
-          <div className="icon-user">
-            <FontAwesomeIcon icon={faUser} />
-          </div>
-          <p>{username}</p>
+          <FontAwesomeIcon icon={faUser} className="icon-user" />
+          <span>{username}</span>
           <span>Se déconnecter</span>
         </div>
       )}

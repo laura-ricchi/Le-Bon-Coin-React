@@ -11,24 +11,15 @@ header {
   top: 10%;
 }
 .create-offer {
-  display: flex;
   background-color: #f56b2a;
   border-radius: 5px;
   color: #ffffff;
   font-size: 16px;
-  line-height: 19px;
   width: 204px;
   height: 39px;
   margin: 11px 31px 10px 44px;
 }
-.create-offer > .icon-plus {
-  align-items: flex-end;
-  font-size: 17px;
-}
 
-.create-offer > span {
-  padding-left: 12px;
-}
 .search {
   display: flex;
   border-bottom: #f56b2a;
@@ -43,27 +34,22 @@ header {
   font-size: 25px;
   margin-right: 20px;
 }
-.search > p {
-  font-size: 18px;
-  align-items: center;
-}
-
 .login {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 9px 0px 17px 0px;
-}
-.login > .icon-user {
-  color: #000000;
-}
-.login > .icon-plus > span {
-  border: none;
-  text-decoration: none;
+  color: #000a11;
 }
 .deconnect {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 9px 0px 17px 0px;
+  justify-content: center;
+  align-self: stretch;
+}
+span {
+  color: #000a11;
+  font-weight: normal;
+  font-size: 15px;
 }

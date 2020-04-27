@@ -17,7 +17,6 @@ const Publish = () => {
 
   // enregistrer le token de l'utilisateur
   const token = Cookies.get("token");
-  console.log(token);
 
   // Pour empêcher le navigateur de changer de page lors de la soumission du formulaire => preventDefault()
   const formOnSubmit = async (event) => {
@@ -38,12 +37,12 @@ const Publish = () => {
         {
           // en tête de la requête
           headers: {
-            Authorization: "Bearer" + token,
+            Authorization: "Bearer " + token,
             "Content-Type": "multipart/form-data",
           },
         }
       );
-      console.log(response.data.offer);
+      console.log("response data ====> ", response.data);
       // Aller sur la page d'accueil
       // Changement de page
       history.push("/");

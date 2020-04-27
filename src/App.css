@@ -79,16 +79,3 @@ input[type="file"] {
     margin: 0 auto;
   }
 }
-
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-  /* Rules */
-}
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-  /* Rules */
-}
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-  /* Rules */
-}
