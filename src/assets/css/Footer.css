@@ -1,9 +1,10 @@
 footer {
-  background: #474747;
-  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: sticky;
+  background: #474747;
+  padding: 20px 0;
 }
 .footer span {
   color: #fafafa;

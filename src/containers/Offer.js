@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import "../App.css";
 import "../assets/css/Offer.css";
@@ -9,9 +9,9 @@ import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import Moment from "react-moment";
 
 const Offer = ({ onLogin }) => {
+  const history = useHistory();
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-
   const { id } = useParams();
 
   useEffect(() => {
@@ -40,33 +40,44 @@ const Offer = ({ onLogin }) => {
         <p>En cours de chargement ...</p>
       ) : (
         <div className="container">
-          <div className="container-picture-price">
-            <img className="picture-offer" alt="offer" src={data.files.url} />
-            <div className="container-info-offer">
-              <div className="offer-title">{data.title}</div>
-              <div className="offer-price">{data.price}€</div>
-              <div className="offer-date">
-                <Moment format="DD/MM/YYYY à HH:mm">{data.created}</Moment>
+          <div className="offer-container">
+            <div class="container-description-offer">
+              <div class="container-info-offer">
+                <img
+                  alt="offer"
+                  className="picture-offer"
+                  src={data.files.url}
+                />
+                <div className="detail-offer">
+                  <div class="title-offer">{data.title}</div>
+                  <div class="price-offer">{data.price}€</div>
+                  <div class="created-offer">
+                    <Moment format="DD/MM/YYYY à HH:mm">{data.created}</Moment>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="tobuy-offer">
+              <div className="info-buyer">
+                <p>{data.creator.account.username}</p>
+                <p>x annonces en ligne</p>
+              </div>
+              <div className="button-buy-offer">
+                <button
+                  className="button-tobuy"
+                  onClick={() => {
+                    history.push("/payment");
+                  }}
+                >
+                  <FontAwesomeIcon icon={faCartPlus} />
+                  <span>Acheter</span>
+                </button>
               </div>
             </div>
           </div>
-          <div className="container-offer-description">
-            <p className="descr">Description</p>
-            <div className="offer-description">{data.description}</div>
-          </div>
-
-          <div className="offer-creator">
-            <div className="infos-user">
-              <div className="offer-username">
-                {data.creator.account.username}
-              </div>
-            </div>
-            <div className="buy-offer">
-              <button className="button-buy-offer" onClick={() => {}}>
-                <FontAwesomeIcon icon={faCartPlus} />
-                <span>Acheter</span>
-              </button>
-            </div>
+          <div className="description-offer">
+            <p>Description</p>
+            <p>{data.description}</p>
           </div>
         </div>
       )}

@@ -1,6 +1,7 @@
 .main-container-signup {
   display: flex;
   justify-content: center;
+  height: 670px;
 }
 .container-signup {
   display: flex;
@@ -66,6 +67,6 @@
   color: #ffffff;
   margin-left: 80px;
 }
-span {
+p span {
   color: #4183d7;
 }

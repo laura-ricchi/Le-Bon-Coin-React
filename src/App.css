@@ -3,7 +3,7 @@ body {
   font-family: "Roboto", sans-serif;
   background: #fafafa;
   color: #000a12;
-  width: 1240px;
+  margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -33,10 +33,6 @@ p {
 hr {
   border: 3px solid #f56b2a;
   width: 350px;
-}
-span {
-  font-weight: bold;
-  font-size: 12px;
 }
 .container {
   width: 1240px;
