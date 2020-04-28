@@ -10,7 +10,7 @@
 - Clone this repository :
 
 ```
-**Git Clone** => https://github.com/laura-ricchi/Le-Bon-Coin-React
+Git Clone => https://github.com/laura-ricchi/Le-Bon-Coin-React
 and  => cd leboncoin-projectlauraricchi
 ```
 
