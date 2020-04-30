@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "../App.css";
 import "../assets/css/Offers.css";
+import "../assets/css/Pagination.css";
 import Search from "../components/Search";
 import { Helmet } from "react-helmet";
 import Pagination from "../components/Pagination";
@@ -46,7 +47,7 @@ const Offers = () => {
             {data.map((element, index) => {
               return (
                 <div className="container-offers">
-                  <Link to={"/offer/" + element._id} key={index}>
+                  <Link key={index} to={"/offer/" + element._id}>
                     <div className="container-picture-offers">
                       <img
                         alt="pictures"
@@ -64,17 +65,15 @@ const Offers = () => {
                       {moment(element.created).format("hh:mm")}
                     </div>
                   </div>
-                  <Pagination
-                    count={data.count}
-                    skip={skip}
-                    setSkip={setSkip}
-                  />
                 </div>
               );
             })}
           </div>
         </div>
       )}
+      <div>
+        <Pagination count={data.count} skip={skip} setSkip={setSkip} />
+      </div>
     </>
   );
 };

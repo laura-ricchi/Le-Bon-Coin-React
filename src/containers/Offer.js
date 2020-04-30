@@ -41,17 +41,17 @@ const Offer = ({ onLogin }) => {
       ) : (
         <div className="container">
           <div className="offer-container">
-            <div class="container-description-offer">
-              <div class="container-info-offer">
+            <div className="container-description-offer">
+              <div className="container-info-offer">
                 <img
                   alt="offer"
                   className="picture-offer"
                   src={data.files.url}
                 />
                 <div className="detail-offer">
-                  <div class="title-offer">{data.title}</div>
-                  <div class="price-offer">{data.price}€</div>
-                  <div class="created-offer">
+                  <div className="title-offer">{data.title}</div>
+                  <div className="price-offer">{data.price}€</div>
+                  <div className="created-offer">
                     <Moment format="DD/MM/YYYY à HH:mm">{data.created}</Moment>
                   </div>
                 </div>
@@ -66,7 +66,12 @@ const Offer = ({ onLogin }) => {
                 <button
                   className="button-tobuy"
                   onClick={() => {
-                    history.push("/payment");
+                    history.push("/payment", {
+                      productId: data._id,
+                      files: data.files.url,
+                      title: data.title,
+                      price: data.price,
+                    });
                   }}
                 >
                   <FontAwesomeIcon icon={faCartPlus} />

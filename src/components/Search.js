@@ -7,7 +7,7 @@ const Search = ({ setData }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await axios.get(
-      `https://leboncoin-api-final.herokuapp.com/offer/with-count?title=${searchInput}`
+      `https://my-project-backend-leboncoin.herokuapp.com/offers/with-count?title=${searchInput}`
     );
     setData(response.data);
   };

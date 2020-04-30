@@ -1,0 +1,8 @@
+.pagination-offers {
+  text-align: center;
+}
+.pagination-offers button {
+  width: 200px;
+  height: 40px;
+  background-color: red;
+}
