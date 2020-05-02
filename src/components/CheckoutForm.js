@@ -7,7 +7,6 @@ const CheckoutForm = ({ stripe }) => {
 
   return !complete ? (
     <div className="checkout">
-      <p>Souhaitez-vous terminer l'achat? </p>
       {/* affichage du formulaire de la carte bleue */}
       <CardElement />
       <button
@@ -25,7 +24,7 @@ const CheckoutForm = ({ stripe }) => {
             // Stripe nous retourne un token
             console.log("stripeResponse.token", stripeResponse.token);
 
-            //
+            // envoi du token au backend
             const paymentResponse = await axios.post(
               "https://my-project-backend-leboncoin.herokuapp.com/payment",
               {
@@ -44,7 +43,7 @@ const CheckoutForm = ({ stripe }) => {
           }
         }}
       >
-        Valider
+        Procéder au règlement
       </button>
     </div>
   ) : (

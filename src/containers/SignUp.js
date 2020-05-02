@@ -62,7 +62,7 @@ const SignUp = ({ onLogin }) => {
                 <FontAwesomeIcon icon={faClock} />
               </div>
               <div className="text-reason">
-                <h3>Gagnez du temps </h3>
+                <h4>Gagnez du temps </h4>
                 <p>
                   Publiez vos annonces rapidement, avec vos informations
                   pré-remplies chaque fois que vous souhaitez déposer une
@@ -76,7 +76,7 @@ const SignUp = ({ onLogin }) => {
                 <FontAwesomeIcon icon={faBell} />
               </div>
               <div className="text-reason">
-                <h3>Soyez les premiers informés</h3>
+                <h4>Soyez les premiers informés</h4>
                 <p>
                   Créez des alertes Immo ou Emploi et ne manquez jamais
                   l’annonce qui vous intéresse.
@@ -89,7 +89,7 @@ const SignUp = ({ onLogin }) => {
                 <FontAwesomeIcon icon={faEye} />
               </div>
               <div className="text-reason">
-                <h3>Visibilité</h3>
+                <h4>Visibilité</h4>
                 <p>
                   Suivez les statistiques de vos annonces (nombre de fois où
                   votre annonce a été vue, nombre de contacts reçus)
@@ -103,7 +103,7 @@ const SignUp = ({ onLogin }) => {
               <div className="create-account-signup">Créer un compte</div>
               <hr></hr>
               <div className="input-create-account">
-                <h4>Pseudo *</h4>
+                <h5>Pseudo *</h5>
                 <input
                   className="input-signup"
                   type="text"
@@ -112,7 +112,7 @@ const SignUp = ({ onLogin }) => {
                     setUsername(event.target.value);
                   }}
                 />
-                <h4>Adresse mail *</h4>
+                <h5>Adresse mail *</h5>
                 <input
                   className="input-signup"
                   type="text"
@@ -121,7 +121,7 @@ const SignUp = ({ onLogin }) => {
                     setEmail(event.target.value);
                   }}
                 />
-                <h4>Mot de passe *</h4>
+                <h5>Mot de passe *</h5>
                 <input
                   className="input-signup"
                   type="password"
@@ -130,7 +130,7 @@ const SignUp = ({ onLogin }) => {
                     setPassword(event.target.value);
                   }}
                 />
-                <h4>Confirmer le mot de passe *</h4>
+                <h5>Confirmer le mot de passe *</h5>
                 <input
                   className="input-signup"
                   type="password"

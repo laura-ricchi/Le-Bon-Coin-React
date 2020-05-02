@@ -52,7 +52,7 @@ const Publish = () => {
   };
 
   return token ? (
-    <div className="offer-publish-container">
+    <div className="container">
       <Helmet>
         <title>Déposer une annonce</title>
       </Helmet>

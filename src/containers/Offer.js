@@ -20,7 +20,6 @@ const Offer = ({ onLogin }) => {
         const response = await axios.get(
           `https://my-project-backend-leboncoin.herokuapp.com/offer/${id}`
         );
-        console.log("response data", response.data);
         setData(response.data);
         setIsLoading(false);
       } catch (e) {
