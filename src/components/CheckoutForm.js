@@ -1,19 +1,23 @@
 import React, { useState } from "react";
 import { CardElement, injectStripe } from "react-stripe-elements";
 import axios from "axios";
+import "../App.css";
+import "../assets/css/CheckoutForm.css";
 
-const CheckoutForm = ({ stripe }) => {
+const CheckoutForm = ({ stripe, title, price, username, productId }) => {
   const [complete, setComplete] = useState(false);
 
   return !complete ? (
     <div className="checkout">
       {/* affichage du formulaire de la carte bleue */}
       <CardElement />
+      {/* création d'un bouton onClick pour la création du token */}
       <button
         onClick={async (event) => {
           // envoi du numéro de carte à Stripe
+          // stripe.createToken = variable à utiliser pour récupérer le token et avoir accès à la variable Stripe
           const stripeResponse = await stripe.createToken({
-            name: "Identifiant de l'acheteur",
+            name: { username },
           });
 
           const stripeToken = stripeResponse.token.id;
@@ -43,7 +47,7 @@ const CheckoutForm = ({ stripe }) => {
           }
         }}
       >
-        Procéder au règlement
+        <p> Procéder au règlement</p>
       </button>
     </div>
   ) : (

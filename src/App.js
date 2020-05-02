@@ -21,7 +21,7 @@ function App() {
     // mise à jour des states
     setToken(token);
     setUsername(username);
-    // enregistement des données par le navigateur du nom et la valeur des cookies ainsi que la date d'expiration exprimée en jourxs
+    // enregistement des données par le navigateur du nom et la valeur des cookies ainsi que la date d'expiration exprimée en jours
     Cookies.set("token", token, { expires: 2000 });
     Cookies.set("username", username, { expires: 2000 });
   };
@@ -46,7 +46,7 @@ function App() {
           <Publish />
         </Route>
         <Route path="/payment">
-          <Payment />
+          <Payment username={username} />
         </Route>
       </Switch>
       <Footer />

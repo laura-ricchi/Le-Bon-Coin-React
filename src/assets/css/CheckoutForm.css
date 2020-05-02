@@ -1,0 +1,16 @@
+.checkout {
+  background: red;
+  width: 182px;
+  height: 20px;
+}
+.checkout button {
+  width: 200px;
+  height: 44px;
+  background: #f56b2a;
+  border-radius: 5px;
+}
+.checkout button p {
+  font-size: 16px;
+  color: #ffffff;
+  text-align: center;
+}
