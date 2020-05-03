@@ -1,13 +1,16 @@
+.checkout-container {
+  display: flex;
+  justify-content: center;
+}
 .checkout {
-  background: red;
-  width: 182px;
-  height: 20px;
+  width: 300px;
 }
 .checkout button {
   width: 200px;
   height: 44px;
   background: #f56b2a;
   border-radius: 5px;
+  margin-top: 36px;
 }
 .checkout button p {
   font-size: 16px;

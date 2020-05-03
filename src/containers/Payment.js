@@ -6,6 +6,7 @@ import { Helmet } from "react-helmet";
 import Cookies from "js-cookie";
 import "../App.css";
 import "../assets/css/Payment.css";
+import "../assets/css/CheckoutForm.css";
 
 const Payment = () => {
   // accéder à la valeur du cookie "token"
@@ -29,10 +30,14 @@ const Payment = () => {
             <img alt="offer" src={files} className="payment-picture" />
             <h3>{title}</h3>
             <p>{price} €</p>
-            <h3>Vos coordonnées bancaires</h3>
             {/* conteneur de tous les inputs de coordonnées bancaires */}
             <Elements>
-              <CheckoutForm />
+              <CheckoutForm
+                username={username}
+                title={title}
+                productId={productId}
+                price={price}
+              />
             </Elements>
           </div>
         </StripeProvider>
