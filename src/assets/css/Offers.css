@@ -26,34 +26,21 @@
   margin-left: 30px;
 }
 .offer-title {
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: normal;
   font-size: 22px;
-  line-height: 26px;
   color: #000000;
   margin-top: 15px;
 }
 .offer-price {
   margin-top: 7px;
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: normal;
   font-size: 20px;
-  line-height: 23px;
   color: #f56b2a;
 }
 .offer-date {
   display: flex;
-  flex: 1;
   align-items: flex-end;
   width: 142px;
   height: 66px;
   margin: 27px 0px 16px 0px;
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: normal;
   font-size: 16px;
-  line-height: 140%;
   color: #000000;
 }

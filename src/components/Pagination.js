@@ -14,11 +14,15 @@ const Pagination = ({ setSkip, skip, count }) => {
     <div className="pagination-offers">
       {/* si la pagination est différente de 0 alors afficher la page précédente */}
       {skip !== 0 && (
-        <button onClick={clickOffersPrevious}>Page précédente</button>
+        <button onClick={clickOffersPrevious}>
+          <p>Page précédente</p>
+        </button>
       )}
       {/* si la pagination est égale à 3 alors afficher la page suivante */}
       {skip + 3 < count && (
-        <button onClick={clickOffersNext}>Page suivante</button>
+        <button onClick={clickOffersNext}>
+          <p>Page suivante</p>
+        </button>
       )}
     </div>
   );

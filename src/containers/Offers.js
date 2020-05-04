@@ -23,7 +23,6 @@ const Offers = () => {
           `https://my-project-backend-leboncoin.herokuapp.com/offers/with-count?skip=${skip}&limit=3`
         );
         setData(response.data);
-        console.log(response.data);
 
         setIsLoading(false);
       } catch (e) {
@@ -33,8 +32,6 @@ const Offers = () => {
 
     fetchData();
   }, [skip]);
-
-  console.log(data);
 
   return (
     <>
@@ -49,8 +46,8 @@ const Offers = () => {
           <div className="all-offers">
             {data.offers.map((element, index) => {
               return (
-                <div className="container-offers">
-                  <Link key={index} to={"/offer/" + element._id}>
+                <div className="container-offers" key={index}>
+                  <Link to={"/offer/" + element._id}>
                     <div className="container-picture-offers">
                       <img
                         alt="pictures"
@@ -64,8 +61,7 @@ const Offers = () => {
                     <div className="offer-title">{element.title}</div>
                     <div className="offer-price">{element.price} €</div>
                     <div className="offer-date">
-                      {moment(element.created).format("L")} à{" "}
-                      {moment(element.created).format("hh:mm")}
+                      {moment(element.created).format("LLL")}
                     </div>
                   </div>
                 </div>
