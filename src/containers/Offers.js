@@ -7,6 +7,7 @@ import "../assets/css/Pagination.css";
 import Search from "../components/Search";
 import { Helmet } from "react-helmet";
 import Pagination from "../components/Pagination";
+import Loading from "../components/Loading";
 const moment = require("moment");
 require("moment/locale/fr");
 
@@ -40,7 +41,7 @@ const Offers = () => {
       </Helmet>
       <Search setData={setData} />
       {isLoading === true ? (
-        <p>En cours de chargement...</p>
+        <Loading />
       ) : (
         <div className="container">
           <div className="all-offers">
