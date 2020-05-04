@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import Moment from "react-moment";
 
-const Offer = ({ onLogin }) => {
+const Offer = () => {
   const history = useHistory();
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -59,7 +59,9 @@ const Offer = ({ onLogin }) => {
             <div className="tobuy-offer">
               <div className="info-buyer">
                 <p>{data.creator.account.username}</p>
-                <p>x annonces en ligne</p>
+                {/* {data.count === 1
+                  ? `${count} annonce en ligne`
+                  : `${count} annonces en ligne`} */}
               </div>
               <div className="button-buy-offer">
                 <button

@@ -13,8 +13,8 @@ import Cookies from "js-cookie";
 
 function App() {
   // Création de 2 states pour accéder à la valeur des cookies "token" et "username"
-  const [token, setToken] = useState(Cookies.get("token") || null);
-  const [username, setUsername] = useState(Cookies.get("username") || "");
+  const [token, setToken] = useState(Cookies.get("token"));
+  const [username, setUsername] = useState(Cookies.get("username"));
 
   // création d'une variable onLogin
   const onLogin = (token, username) => {

@@ -34,6 +34,7 @@ const Offers = () => {
     fetchData();
   }, [skip]);
 
+  console.log(data);
   return (
     <>
       <Helmet>
