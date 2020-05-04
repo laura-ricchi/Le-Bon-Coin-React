@@ -22,8 +22,9 @@ const Offers = () => {
         const response = await axios.get(
           `https://my-project-backend-leboncoin.herokuapp.com/offers/with-count?skip=${skip}&limit=3`
         );
-        setData(response.data.offers);
+        setData(response.data);
         console.log(response.data);
+
         setIsLoading(false);
       } catch (e) {
         console.log("error");
@@ -32,6 +33,8 @@ const Offers = () => {
 
     fetchData();
   }, [skip]);
+
+  console.log(data);
 
   return (
     <>
@@ -44,7 +47,7 @@ const Offers = () => {
       ) : (
         <div className="container">
           <div className="all-offers">
-            {data.map((element, index) => {
+            {data.offers.map((element, index) => {
               return (
                 <div className="container-offers">
                   <Link key={index} to={"/offer/" + element._id}>

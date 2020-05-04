@@ -3,16 +3,11 @@ import { Elements, StripeProvider } from "react-stripe-elements";
 import CheckoutForm from "../components/CheckoutForm";
 import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import Cookies from "js-cookie";
 import "../App.css";
 import "../assets/css/Payment.css";
 import "../assets/css/CheckoutForm.css";
 
-const Payment = () => {
-  // accéder à la valeur du cookie "token"
-  const token = Cookies.get("token");
-  // accéder à la valeur du cookie "username"
-  const username = Cookies.get("username");
+const Payment = ({ token, username }) => {
   const location = useLocation();
   console.log(location);
   let { productId, files, title, price } = location.state;
@@ -27,7 +22,7 @@ const Payment = () => {
         <StripeProvider apiKey={process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}>
           <div className="payment-card">
             <h1> Acheter en ligne </h1>
-            <img alt="offer" src={files} className="payment-picture" />
+            <img alt={title} src={files} className="payment-picture" />
             <h3>{title}</h3>
             <p>{price} €</p>
             {/* conteneur de tous les inputs de coordonnées bancaires */}
@@ -37,6 +32,7 @@ const Payment = () => {
                 title={title}
                 productId={productId}
                 price={price}
+                token={token}
               />
             </Elements>
           </div>

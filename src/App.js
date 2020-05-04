@@ -46,7 +46,7 @@ function App() {
           <Publish />
         </Route>
         <Route path="/payment">
-          <Payment username={username} />
+          <Payment username={username} token={token} />
         </Route>
       </Switch>
       <Footer />

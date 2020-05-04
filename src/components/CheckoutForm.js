@@ -4,37 +4,34 @@ import axios from "axios";
 import "../App.css";
 import "../assets/css/CheckoutForm.css";
 
-const CheckoutForm = ({ stripe, title, price, username, productId }) => {
+const CheckoutForm = ({ stripe, title, price, username, productId, token }) => {
   const [complete, setComplete] = useState(false);
 
-  const submitFormPayment = async (event) => {
+  const submitFormPayment = async () => {
     try {
       // envoi du numéro de carte à Stripe
       // stripe.createToken = variable à utiliser pour récupérer le token et avoir accès à la variable Stripe
       const stripeResponse = await stripe.createToken({
-        name: { username },
+        name: username,
       });
 
-      // Stripe nous retourne un token
-      if (stripeResponse.error) {
-        alert(stripeResponse.error.message);
-      } else {
-        // 4. Stripe nous retourne un token
-        console.log("stripeResponse.token", stripeResponse.token);
-      }
+      const stripeToken = stripeResponse.token.id;
+
       // envoi du token au backend
       const paymentResponse = await axios.post(
         "https://my-project-backend-leboncoin.herokuapp.com/payment",
         {
-          token: stripeResponse.token.id,
+          stripeToken: stripeToken,
           title: title,
-          amount: price * 100,
           productId: productId,
+          price: price,
+          token: token,
         }
       );
       // le backend nous confirme si le paiement a été effectué
       if (paymentResponse.status === 200) {
         setComplete(true);
+        console.log("paiement effectué");
       } else {
         alert("An error occurred");
       }
