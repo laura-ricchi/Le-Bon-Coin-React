@@ -15,17 +15,14 @@ const CheckoutForm = ({ stripe, title, price, username, productId, token }) => {
         name: username,
       });
 
-      const stripeToken = stripeResponse.token.id;
-
       // envoi du token au backend
       const paymentResponse = await axios.post(
         "https://my-project-backend-leboncoin.herokuapp.com/payment",
         {
-          stripeToken: stripeToken,
+          stripeToken: stripeResponse.token.id,
           title: title,
           productId: productId,
-          price: price,
-          token: token,
+          amount: price * 10,
         }
       );
       // le backend nous confirme si le paiement a été effectué

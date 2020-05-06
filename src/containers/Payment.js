@@ -1,7 +1,7 @@
 import React from "react";
 import { Elements, StripeProvider } from "react-stripe-elements";
 import CheckoutForm from "../components/CheckoutForm";
-import { Link, useLocation } from "react-router-dom";
+import { Redirect, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import "../App.css";
 import "../assets/css/Payment.css";
@@ -40,7 +40,7 @@ const Payment = ({ token, username }) => {
       </div>
     </>
   ) : (
-    <Link to="/login">Se connecter</Link>
+    <Redirect to="/login">Se connecter</Redirect>
   );
 };
 export default Payment;

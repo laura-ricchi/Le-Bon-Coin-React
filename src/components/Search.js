@@ -20,7 +20,6 @@ const Search = ({ setData }) => {
             <form onSubmit={handleSubmit}>
               <input
                 className="search-input"
-                placeholder="Que recherchez-vous ?"
                 type="text"
                 onChange={(event) => setSearchInput(event.target.value)}
               />
