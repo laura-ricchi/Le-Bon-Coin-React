@@ -64,3 +64,9 @@ input[type="file"] {
 textarea {
   font-family: "Roboto", sans-serif;
 }
+/* Media Queries */
+@media (max-width: 1240px) {
+  .container {
+    width: 100%;
+  }
+}

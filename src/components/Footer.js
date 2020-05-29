@@ -7,7 +7,7 @@ const Footer = () => {
     <footer>
       <div className="footer">
         <span>
-          Réplique de Le Bon Coin réalisée avec
+          Réplique du site Le Bon Coin réalisée avec
           <a href="https://fr.reactjs.org/"> React</a> par
         </span>
         <a href="https://www.linkedin.com/in/lauraricchi/"> Laura Ricchi</a>

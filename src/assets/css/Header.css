@@ -36,3 +36,8 @@ header {
 .login {
   color: #000a11;
 }
+@media (max-width: 768px) {
+  .hidden-xs {
+    display: none;
+  }
+}
