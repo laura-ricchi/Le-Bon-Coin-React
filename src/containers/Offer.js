@@ -38,8 +38,8 @@ const Offer = () => {
       {isLoading === true ? (
         <p>En cours de chargement ...</p>
       ) : (
-        <div className="container">
-          <div className="offer-container">
+        <div>
+          <div className="container-offer">
             <div className="container-description-offer">
               <div className="container-info-offer">
                 <img
@@ -59,9 +59,6 @@ const Offer = () => {
             <div className="tobuy-offer">
               <div className="info-buyer">
                 <p>{data.creator.account.username}</p>
-                {/* {data.count === 1
-                  ? `${count} annonce en ligne`
-                  : `${count} annonces en ligne`} */}
               </div>
               <div className="button-buy-offer">
                 <button

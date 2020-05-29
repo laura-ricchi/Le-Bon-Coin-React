@@ -1,13 +1,26 @@
 header {
   display: flex;
-  align-items: flex-start;
-  height: 60px;
-  width: 1240px;
+  width: 100%;
   background-color: #ffffff;
+  height: 100px;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
 }
-.logo {
-  margin: 15px 44px 15px 231px;
+.logo-leboncoin {
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+}
+.buttons-header {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.buttons-header div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .create-offer {
   background-color: #f56b2a;
@@ -16,33 +29,10 @@ header {
   font-size: 16px;
   width: 204px;
   height: 39px;
-  margin: 11px 31px 10px 44px;
-}
-.icon-plus {
-  margin-right: 5px;
 }
 .search {
-  display: flex;
-  border-bottom: #f56b2a;
-  font-size: 18px;
-  margin: 20px 298px 19px 15px;
-  width: 91px;
-}
-.search > .icon-search {
-  font-size: 25px;
-  margin-right: 20px;
+  font-weight: bold;
 }
 .login {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 9px 0px 17px 0px;
   color: #000a11;
-}
-.deconnect {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  align-self: stretch;
 }

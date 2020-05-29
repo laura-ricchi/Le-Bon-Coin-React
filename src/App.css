@@ -4,7 +4,7 @@ body {
   background: #fafafa;
   color: #000a12;
   margin: 0 auto;
-  width: 1240px;
+  width: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -41,9 +41,9 @@ hr {
   width: 350px;
 }
 .container {
-  width: 1240px;
+  display: flex;
+  justify-content: center;
   margin: 0 auto;
-  box-sizing: border-box;
 }
 input[type="submit"],
 input[type="button"],
@@ -57,27 +57,10 @@ input[type="file"] {
   height: 44px;
   background: #4183d7;
   border-radius: 5px;
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
   font-weight: bold;
   font-size: 16px;
   color: #ffffff;
 }
-
-/* Media Queries */
-/* Desktop -> Mobile */
-@media (max-width: 1240px) {
-  .container {
-    width: 100%;
-    margin: 0;
-  }
-}
-
-/* Mobile -> Desktop */
-
-@media (min-width: 1024px) {
-  .container {
-    width: 1024px;
-    margin: 0 auto;
-  }
+textarea {
+  font-family: "Roboto", sans-serif;
 }

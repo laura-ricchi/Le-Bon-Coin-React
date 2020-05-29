@@ -1,5 +1,6 @@
-.offer-container {
+.container-offer {
   display: flex;
+  justify-content: center;
   margin-top: 44px;
 }
 .container-description-offer {
@@ -12,7 +13,7 @@
 }
 .picture-offer {
   width: 700px;
-  height: 393.56px;
+  height: 394px;
   object-fit: contain;
 }
 .detail-offer {
@@ -31,14 +32,16 @@
   margin-top: 93px;
 }
 .description-offer {
+  width: 700px;
   padding-top: 27px;
+  margin-left: 120px;
 }
 .description-offer p:first-child {
   font-weight: bold;
   font-size: 19px;
 }
 .description-offer p:last-child {
-  font-size: 19px;
+  font-size: 16px;
 }
 .tobuy-offer {
   width: 279px;

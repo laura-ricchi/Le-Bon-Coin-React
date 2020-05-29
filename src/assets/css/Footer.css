@@ -2,7 +2,6 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: sticky;
   background: #474747;
   padding: 20px 0;
 }

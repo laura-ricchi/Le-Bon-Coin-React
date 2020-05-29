@@ -4,9 +4,9 @@
 }
 .pagination-offers button {
   width: 200px;
-  height: 40px;
   background-color: #f56b2a;
   margin-right: 5px;
+  border-radius: 5px;
 }
 .pagination-offers p {
   font-weight: bold;
