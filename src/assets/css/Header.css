@@ -10,12 +10,20 @@ header {
   align-items: center;
   margin-left: 50px;
 }
+.button-new-offer {
+  margin-left: 50px;
+  align-self: center;
+}
+.search {
+  align-self: center;
+  margin-left: 50px;
+}
 .buttons-header {
   display: flex;
   flex: 1;
   flex-direction: row;
-  justify-content: space-evenly;
   align-items: center;
+  justify-content: flex-end;
 }
 .buttons-header div {
   display: flex;
@@ -36,8 +44,23 @@ header {
 .login {
   color: #000a11;
 }
-@media (max-width: 768px) {
-  .hidden-xs {
+.search-offers,
+.favorites,
+.comment,
+.login,
+.deconnect {
+  margin-right: 20px;
+}
+@media (max-width: 1024px) {
+  .hidden-sm-header {
     display: none;
+  }
+}
+@media (max-width: 768px) {
+  .hidden-xs-header {
+    display: none;
+  }
+  .visible-xs-header {
+    display: block;
   }
 }

@@ -25,17 +25,19 @@ const Header = ({ token, setToken, username }) => {
             <img src={logo} className="logo" alt="logo" />
           </Link>
         </div>
-        <div className="buttons-header hidden-xs">
+        <div className="button-new-offer">
           <Link to="/offers/publish" style={{ textDecoration: "none" }}>
             <button className="create-offer">
               <FontAwesomeIcon icon={faPlusSquare} className="icon-plus" />
               Déposer une annonce
             </button>
           </Link>
-          <div className="search">
-            <FontAwesomeIcon icon={faSearch} className="icon-search" />
-            Rechercher
-          </div>
+        </div>
+        <div className="search hidden-xs-header visible-xs-header">
+          <FontAwesomeIcon icon={faSearch} className="icon-search" />
+          Rechercher
+        </div>
+        <div className="buttons-header hidden-sm-header hidden-xs-header">
           <div className="search-offers">
             <FontAwesomeIcon icon={faBell} />
             Mes recherches
@@ -57,6 +59,7 @@ const Header = ({ token, setToken, username }) => {
             </Link>
           ) : (
             <div
+              className="deconnect"
               onClick={() => {
                 // Mise à jour du state setToken => déconnexion
                 setToken(null);
