@@ -16,16 +16,21 @@
   height: 130px;
   background: #ffffff;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 5apx;
+  border-radius: 5px;
   margin-top: 40px;
 }
 .search-input {
   width: 320px;
   height: 44px;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  border: none;
 }
 .button-search {
   width: 220px;
   height: 44px;
+  outline: none;
   background: #4183d7;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;

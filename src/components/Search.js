@@ -21,6 +21,7 @@ const Search = ({ setData }) => {
               <input
                 className="search-input"
                 type="text"
+                placeholder="Que recherchez-vous ?"
                 onChange={(event) => setSearchInput(event.target.value)}
               />
               <input

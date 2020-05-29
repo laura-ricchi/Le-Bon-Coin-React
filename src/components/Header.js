@@ -35,7 +35,9 @@ const Header = ({ token, setToken, username }) => {
         </div>
         <div className="search hidden-xs-header visible-xs-header">
           <FontAwesomeIcon icon={faSearch} className="icon-search" />
-          Rechercher
+          <Link to="/" className="link-search">
+            Rechercher
+          </Link>
         </div>
         <div className="buttons-header hidden-sm-header hidden-xs-header">
           <div className="search-offers">
