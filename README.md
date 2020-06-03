@@ -2,7 +2,7 @@
 	Le Bon Coin Clone made by Laura Ricchi with React 💻
     </h1>
 
-![Video](src/assets/img/Video-LeBonCoin.mov)
+![](src/assets/img/Video-LeBonCoin.mov)
 
 Demo : https://leboncoin-by-lauraricchi.netlify.app/
 
