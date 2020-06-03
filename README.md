@@ -2,8 +2,6 @@
 	Le Bon Coin Clone made by Laura Ricchi with React 💻
     </h1>
 
-!video[Le Bon Coin](src/assets/img/Video-LeBonCoin.mov){ size=10 }
-
 Demo : https://leboncoin-by-lauraricchi.netlify.app/
 
 6 pages are availables :
