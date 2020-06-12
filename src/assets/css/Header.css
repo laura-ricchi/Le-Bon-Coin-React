@@ -8,7 +8,6 @@ header {
 .logo-leboncoin {
   display: flex;
   align-items: center;
-  margin-left: 50px;
 }
 .button-new-offer {
   margin-left: 50px;
@@ -24,10 +23,9 @@ header {
 }
 .buttons-header {
   display: flex;
-  flex: 1;
-  flex-direction: row;
   align-items: center;
-  justify-content: flex-end;
+  margin-left: 30px;
+  font-size: 14px;
 }
 .buttons-header div {
   display: flex;
@@ -74,5 +72,9 @@ header {
   }
   .visible-xs-header {
     display: block;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
   }
 }

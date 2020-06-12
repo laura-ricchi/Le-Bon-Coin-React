@@ -19,13 +19,13 @@ const Header = ({ token, setToken, username }) => {
 
   return (
     <header>
-      <>
+      <div className="container">
         <div className="logo-leboncoin">
           <Link to="/">
             <img src={logo} className="logo" alt="logo" />
           </Link>
         </div>
-        <div className="button-new-offer">
+        <div className="button-new-offer hidden-xs-header">
           <Link to="/offers/publish" style={{ textDecoration: "none" }}>
             <button className="create-offer">
               <FontAwesomeIcon icon={faPlusSquare} className="icon-plus" />
@@ -33,7 +33,7 @@ const Header = ({ token, setToken, username }) => {
             </button>
           </Link>
         </div>
-        <div className="search hidden-xs-header visible-xs-header">
+        <div className="search hidden-xs-header">
           <FontAwesomeIcon icon={faSearch} className="icon-search" />
           <Link to="/" className="link-search">
             Rechercher
@@ -79,7 +79,7 @@ const Header = ({ token, setToken, username }) => {
             </div>
           )}
         </div>
-      </>
+      </div>
     </header>
   );
 };

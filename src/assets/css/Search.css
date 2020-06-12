@@ -1,4 +1,4 @@
-.ellipsis-container {
+.container-ellipsis {
   width: 100%;
   height: 100px;
   background: #f56b2a;
@@ -40,4 +40,9 @@
 }
 .form-search-icon {
   background: #dadada;
+}
+@media (max-width: 1024px) {
+  .ellipsis-container {
+    width: 100%;
+  }
 }

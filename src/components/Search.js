@@ -13,8 +13,8 @@ const Search = ({ setData }) => {
   };
 
   return (
-    <div className="ellipsis-container">
-      <div>
+    <div className="container-ellipsis-">
+      <div className="ellipsis">
         <div className="container-form">
           <div className="search-form">
             <form onSubmit={handleSubmit}>
