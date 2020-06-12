@@ -14,10 +14,10 @@
   justify-content: center;
   width: 810px;
   height: 130px;
-  background: #ffffff;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   margin-top: 40px;
+  background: #ffffff;
 }
 .search-input {
   width: 320px;
@@ -44,5 +44,21 @@
 @media (max-width: 1024px) {
   .ellipsis-container {
     width: 100%;
+  }
+}
+@media (max-width: 992px) {
+  .container-form {
+    background: #ffffff;
+  }
+  .search-form {
+    width: 100%;
+    background: #f56b2a;
+    border-radius: 20px;
+  }
+  .search-input {
+    width: 200px;
+  }
+  .button-search {
+    width: 200px;
   }
 }
