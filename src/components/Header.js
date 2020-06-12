@@ -12,6 +12,7 @@ import {
   faUser,
   faBell,
   faCommentDots,
+  faBars,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Header = ({ token, setToken, username }) => {
@@ -19,7 +20,10 @@ const Header = ({ token, setToken, username }) => {
 
   return (
     <header>
-      <div className="container">
+      <div className="container-header">
+        <div className="bars">
+          <FontAwesomeIcon icon={faBars} size="2x" className="icon-bars" />
+        </div>
         <div className="logo-leboncoin">
           <Link to="/">
             <img src={logo} className="logo" alt="logo" />

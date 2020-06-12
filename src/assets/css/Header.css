@@ -5,6 +5,20 @@ header {
   height: 60px;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
 }
+.container-header {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+}
+.bars {
+  display: flex;
+  align-items: center;
+}
+.icon-bars {
+  font-weight: bold;
+  color: #f56b2a;
+  cursor: pointer;
+}
 .logo-leboncoin {
   display: flex;
   align-items: center;
@@ -76,5 +90,10 @@ header {
   .logo {
     display: flex;
     align-items: center;
+  }
+}
+@media (min-width: 992px) {
+  .bars {
+    display: none;
   }
 }
