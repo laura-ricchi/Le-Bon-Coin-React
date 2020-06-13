@@ -40,7 +40,42 @@
   align-items: flex-end;
   width: 142px;
   height: 66px;
-  margin: 27px 0px 16px 0px;
+  margin: 15px 0px 16px 0px;
   font-size: 16px;
   color: #000000;
+}
+@media (max-width: 1024px) {
+  .container-offers {
+    width: 800px;
+  }
+}
+@media (max-width: 992px) {
+  .container-offers {
+    width: 700px;
+  }
+  .offer-title,
+  .offer-price,
+  .offer-date {
+    font-size: 18px;
+  }
+}
+@media (max-width: 768px) {
+  .container-offers {
+    width: 100%;
+  }
+  .offer-title,
+  .offer-price,
+  .offer-date {
+    font-size: 16px;
+  }
+}
+@media (max-width: 576px) {
+  .container-offers {
+    width: 100%;
+  }
+  .offer-title,
+  .offer-price,
+  .offer-date {
+    font-size: 12px;
+  }
 }
