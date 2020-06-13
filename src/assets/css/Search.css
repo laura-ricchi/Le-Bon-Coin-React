@@ -62,3 +62,16 @@
     width: 200px;
   }
 }
+@media (max-width: 320px) {
+  .search-form {
+    width: 100%;
+    background: #f56b2a;
+    border-radius: 20px;
+  }
+  .search-input {
+    width: 100%;
+  }
+  .button-search {
+    width: 100%;
+  }
+}

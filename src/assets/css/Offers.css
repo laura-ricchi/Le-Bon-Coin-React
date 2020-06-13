@@ -87,15 +87,12 @@
 }
 @media (max-width: 320px) {
   .container-offers {
-    height: 100px;
+    height: 100%;
   }
   .offer-title,
   .offer-price,
   .offer-date {
     font-size: 10px;
-  }
-  .offer-date {
-    margin: none;
   }
   .container-picture-offers,
   .pictures-offers {
