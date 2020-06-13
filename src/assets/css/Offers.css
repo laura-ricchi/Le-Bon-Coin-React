@@ -40,7 +40,6 @@
   align-items: flex-end;
   width: 142px;
   height: 66px;
-  margin: 15px 0px 16px 0px;
   font-size: 16px;
   color: #000000;
 }
@@ -56,7 +55,7 @@
   .offer-title,
   .offer-price,
   .offer-date {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 @media (max-width: 768px) {
@@ -66,16 +65,40 @@
   .offer-title,
   .offer-price,
   .offer-date {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 @media (max-width: 576px) {
   .container-offers {
-    width: 100%;
+    height: 120px;
   }
   .offer-title,
   .offer-price,
   .offer-date {
     font-size: 12px;
+  }
+  .offer-date {
+    margin: none;
+  }
+  .container-picture-offers,
+  .pictures-offers {
+    height: 120px;
+  }
+}
+@media (max-width: 320px) {
+  .container-offers {
+    height: 100px;
+  }
+  .offer-title,
+  .offer-price,
+  .offer-date {
+    font-size: 10px;
+  }
+  .offer-date {
+    margin: none;
+  }
+  .container-picture-offers,
+  .pictures-offers {
+    height: 100px;
   }
 }
