@@ -85,17 +85,3 @@
     height: 120px;
   }
 }
-@media (max-width: 320px) {
-  .container-offers {
-    height: 100%;
-  }
-  .offer-title,
-  .offer-price,
-  .offer-date {
-    font-size: 10px;
-  }
-  .container-picture-offers,
-  .pictures-offers {
-    height: 100px;
-  }
-}
