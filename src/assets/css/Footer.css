@@ -1,9 +1,11 @@
-footer {
+/* .footer-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #474747;
-  padding: 20px 0;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  background-color: #343a40;
 }
 .footer span {
   color: #fafafa;
@@ -13,4 +15,4 @@ footer {
   cursor: pointer;
   font-weight: bold;
   color: #fafafa;
-}
+} */
